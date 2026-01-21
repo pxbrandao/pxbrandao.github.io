@@ -4,17 +4,75 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Pedro Brandão</title>
-    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.tailwindcss.com?plugins=typography"></script>
+    <script>
+      tailwind.config = {
+        darkMode: "class",
+        theme: { extend: {} },
+      };
+    </script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      body {
+        font-family: "Raleway", ui-sans-serif, system-ui;
+      }
+    </style>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const toggleButton = document.getElementById("theme-toggle");
+        const themeIcon = document.getElementById("theme-icon");
+
+        // Determine initial theme
+        const isDark =
+          localStorage.theme === "dark" ||
+          (!("theme" in localStorage) &&
+            window.matchMedia("(prefers-color-scheme: dark)").matches);
+
+        document.documentElement.classList.toggle("dark", isDark);
+        themeIcon.className = isDark ? "fa-solid fa-moon" : "fa-solid fa-sun";
+
+        // Toggle theme on click
+        toggleButton.addEventListener("click", () => {
+          const darkMode = document.documentElement.classList.toggle("dark");
+          localStorage.theme = darkMode ? "dark" : "light";
+          themeIcon.className = darkMode
+            ? "fa-solid fa-moon"
+            : "fa-solid fa-sun";
+        });
+      });
+    </script>
   </head>
 
-  <body>
+  <body class="bg-white text-gray-900 dark:bg-gray-900 dark:text-gray-100">
     <header>
-      <h1>Pedro Brandão</h1>
+      <div class="flex justify-end p-2">
+        <button
+          id="theme-toggle"
+          class="px-4 py-2 rounded bg-gray-200 dark:bg-gray-800 text-gray-800 dark:text-gray-200 focus:outline-none flex items-center justify-center gap-2"
+        >
+          <i id="theme-icon" class="fa-solid fa-sun"></i>
+        </button>
+      </div>
     </header>
 
-    <main>
-      <section id="about">
-        <h2>Summary</h2>
+    <main class="prose prose-slate dark:prose-invert mx-auto px-4 pb-16">
+      <section id="personal-details" aria-labelledby="personal-details-heading">
+        <h1 id="personal-details-heading" class="mb-0">Pedro Brandão</h1>
+        <p class="mt-2">Senior software engineer</p>
+      </section>
+
+      <section id="summary" aria-labelledby="summary-heading">
+        <h2 id="summary-heading">Summary</h2>
         <p>
           Software Engineer with 6+ years of experience specializing in frontend
           (Angular and Next.js). Proficient in responsive design and
@@ -28,19 +86,21 @@
         <h2>Technical skills</h2>
 
         <ul>
-          <li>Languages: JavaScript, TypeScript, HTML, CSS</li>
-
+          <li><strong>Languages:</strong> JavaScript, TypeScript, HTML, CSS</li>
           <li>
-            Frontend: Angular, React, Next.js, Ionic Framework, Tailwind CSS,
-            shadcn/ui (Radix UI), Three.js
+            <strong>Frontend:</strong> Angular, React, Next.js, Ionic Framework,
+            Tailwind CSS, shadcn/ui (Radix UI), Three.js
           </li>
           <li>
-            Backend / Full-Stack: Node.js, REST APIs, Server-Side Rendering
-            (Next.js)
+            <strong>Backend / Full-Stack:</strong> Node.js, REST APIs,
+            Server-Side Rendering (Next.js)
           </li>
-          <li>Databases: PostgreSQL, Drizzle ORM, SQL (migrations)</li>
-          <li>Mobile: Capacitor, Cordova</li>
-          <li>Tools & Other: Git, Docker, Linux, Figma</li>
+          <li>
+            <strong>Databases:</strong> PostgreSQL, Drizzle ORM, SQL
+            (migrations)
+          </li>
+          <li><strong>Mobile:</strong> Capacitor, Cordova</li>
+          <li><strong>Tools & Other:</strong> Git, Docker, Linux, Figma</li>
         </ul>
       </section>
 
@@ -67,16 +127,17 @@
           </ul>
 
           <h4>Key projects</h4>
-          <ul>
-            <li>
-              <strong>Heartfelt Health Integrity</strong>
-              <span>— 2024 - present</span>
-              <p>
-                Development of clinical trial management web application used
-                across UK and US sites for patient tracking and trial data
-                management (Next.js, Shadcn/ui, Tailwind CSS, TanStack and
-                Drizzle ORM).
-              </p>
+          <dl>
+            <dt>
+              <strong>Heartfelt Health Integrity</strong> (<span
+                ><time datetime="2024">2024</time> — Present</span
+              >)
+            </dt>
+            <dd>
+              Development of clinical trial management web application used
+              across UK and US sites for patient tracking and trial data
+              management (Next.js, Shadcn/ui, Tailwind CSS, TanStack and Drizzle
+              ORM).
               <ul>
                 <li>
                   Deployed in production across multiple UK and US clinical
@@ -85,14 +146,15 @@
               </ul>
             </li>
 
-            <li>
-              <strong>Heartfelt Companion App</strong>
-              <span>— 2023 - present</span>
-              <p>
-                Development of a companion app for heart-failure symptom
-                monitoring and medical device connectivity (Angular, Ionic,
-                Capacitor, PostgreSQL).
-              </p>
+            <dt>
+              <strong>Heartfelt Companion App</strong> (<span
+                ><time datetime="2023">2023</time> — Present</span
+              >)
+            </dt>
+            <dd>
+              Development of a companion app for heart-failure symptom
+              monitoring and medical device connectivity (Angular, Ionic,
+              Capacitor, PostgreSQL).
               <ul>
                 <li>
                   Improved patient engagement and consistency of symptom
@@ -101,14 +163,16 @@
               </ul>
             </li>
 
-            <li>
-              <strong>NIPE - textbook in a pocket</strong>
-              <span>— 2022 - 2024</span>
-              <p>
-                Development of a neonatal screening training tool and web
-                dashboards for content management, user administration, and
-                payment processing (Angular, Ionic, Cordova, PostgreSQL).
-              </p>
+            <dt>
+              <strong>NIPE - textbook in a pocket</strong> (<span
+                ><time datetime="2022">2022</time> —
+                <time datetime="2024">2024</time></span
+              >)
+            </dt>
+            <dd>
+              Development of a neonatal screening training tool and web
+              dashboards for content management, user administration, and
+              payment processing (Angular, Ionic, Cordova, PostgreSQL).
               <ul>
                 <li>
                   Deployed in production improving access to remote education
@@ -117,14 +181,15 @@
               </ul>
             </li>
 
-            <li>
-              <strong>Advantage Diary</strong>
-              <span>— 2022 - 2023</span>
-              <p>
-                Implementation of data visualization components for pain
-                tracking, triggers and notifications (Angular, Ionic, Cordova,
-                PostgreSQL).
-              </p>
+            <dt>
+              <strong>Advantage Diary</strong> (<span
+                ><time datetime="2022">2022</time> —
+                <time datetime="2023">2023</time></span
+              >)
+            </dt>
+            <dd>
+              Implementation of data visualization components for pain tracking,
+              triggers and notifications (Angular, Ionic, Cordova, PostgreSQL).
               <ul>
                 <li>
                   Improved self-monitoring practices through clear
@@ -133,14 +198,16 @@
               </ul>
             </li>
 
-            <li>
-              <strong>BUDS</strong>
-              <span>— 2020 - 2023</span>
-              <p>
-                Design, prototyping and development of a parental support mobile
-                app, including integration with external proprietary CMS
-                (Angular, Ionic, Cordova).
-              </p>
+            <dt>
+              <strong>BUDS</strong> (<span
+                ><time datetime="2020">2020</time> —
+                <time datetime="2023">2023</time></span
+              >)
+            </dt>
+            <dd>
+              Design, prototyping and development of a parental support mobile
+              app, including integration with external proprietary CMS (Angular,
+              Ionic, Cordova).
               <ul>
                 <li>
                   Aimed at improving communication and access to information by
@@ -208,13 +275,15 @@
         </article>
       </section>
 
-      <footer>
-        <p>
-          Open to remote or hybrid work. Prefer open-source products with focus
-          positive impact.
-        </p>
-        <p>Built by Pedro Brandão. View source on GitHub.</p>
-      </footer>
-    </main>
+    <footer class="prose prose-slate mx-auto px-4 pb-4">
+      <p>
+        Open to remote or hybrid work. Prefer open-source products with focus on
+        positive impact.
+      </p>
+      <p>
+        Built by Pedro Brandão. View
+        <a href="https://github.com/pxbrandao/pxbrandao.github.io">source</a>.
+      </p>
+    </footer>
   </body>
 </html>
