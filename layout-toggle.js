@@ -24,8 +24,8 @@ class LayoutToggle extends HTMLElement {
     this.innerHTML = `
       <button
         class="flex items-center justify-center gap-2 px-4 py-2 rounded w-8 h-8
-               bg-black text-white
-               dark:bg-white dark:text-black
+               bg-neutral-900 text-neutral-100
+               dark:bg-neutral-100 dark:text-neutral-900
                focus:outline-none"
         aria-label="Toggle layout"
       >

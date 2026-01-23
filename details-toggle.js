@@ -6,7 +6,7 @@ class DetailsToggle extends HTMLElement {
     this.innerHTML = `
       <button type="button"
               class="flex items-center gap-2 text-sm font-medium
-                     text-gray-700 dark:text-gray-300
+                     text-neutral-900 dark:text-neutral-100
                      hover:underline focus:outline-none"
               aria-expanded="false">
               <span>Show details</span>
