@@ -6,11 +6,11 @@ function toggleFlexLayout(enable) {
   if (!left || !right) return; // safety check
 
   if (enable) {
-    main.classList.add('flex', 'flex-row', 'flex-wrap');
+    main.classList.add('flex', 'flex-row', 'flex-wrap', 'max-w-6xl');
     left.classList.add('flex-[1]');
     right.classList.add('flex-[2]');
   } else {
-    main.classList.remove('flex', 'flex-row', 'flex-wrap');
+    main.classList.remove('flex', 'flex-row', 'flex-wrap', 'max-w-6xl');
     left.classList.remove('flex-[1]');
     right.classList.remove('flex-[2]');
   }
@@ -23,9 +23,9 @@ class LayoutToggle extends HTMLElement {
 
     this.innerHTML = `
       <button
-        class="flex items-center justify-center gap-2 px-4 py-2 rounded
-               bg-gray-200 text-gray-800
-               dark:bg-gray-800 dark:text-gray-200
+        class="flex items-center justify-center gap-2 px-4 py-2 rounded w-8 h-8
+               bg-black text-white
+               dark:bg-white dark:text-black
                focus:outline-none"
         aria-label="Toggle layout"
       >

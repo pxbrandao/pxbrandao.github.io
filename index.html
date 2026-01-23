@@ -32,7 +32,7 @@
     <script type="module" src="details-toggle.js"></script>
   </head>
 
-  <body class="bg-white text-gray-900 dark:bg-gray-900 dark:text-gray-100">
+  <body class="bg-white text-gray-900 dark:bg-black dark:text-gray-100">
     <header class="fixed w-full">
       <div class="flex justify-end p-4 gap-2">
         <layout-toggle></layout-toggle>
@@ -40,8 +40,11 @@
       </div>
     </header>
 
-    <main class="prose prose-slate dark:prose-invert max-w-6xl mx-auto py-16">
-      <div id="left-col" class="px-8 border-0 border-gray-300 dark:border-gray-700 lg:border rounded-2xl">
+    <main class="prose prose-slate dark:prose-invert max-w-4xl mx-auto py-16">
+      <div
+        id="left-col"
+        class="px-8 border-0 border-gray-300 dark:border-gray-700 xl:border rounded-2xl"
+      >
         <section
           id="summary"
           aria-labelledby="personal-details-heading"
@@ -51,6 +54,47 @@
             Pedro Brandão
           </h1>
           <p class="mt-2">Software engineer</p>
+          <div class="flex flex-col gap-2">
+            <span class="flex items-center gap-2 text-sm">
+              <i class="fab fa-github"></i>
+              <a
+                href="https://github.com/pxbrandao"
+                target="_blank"
+                class="text-gray-900 dark:text-gray-100"
+              >
+                <span>github.com/pxbrandao</span>
+              </a>
+            </span>
+            <span class="flex items-center gap-2 text-sm">
+              <i class="fab fa-linkedin"></i>
+              <a
+                href="https://www.linkedin.com/in/opedrobrandao/"
+                target="_blank"
+                class="text-gray-900 dark:text-gray-100"
+              >
+                <span>linkedin.com/in/opedrobrandao</span>
+              </a>
+            </span>
+            <span class="flex items-center gap-2 text-sm">
+              <i class="fa-solid fa-envelope"></i>
+              <a
+                href="mailto:pybrandao@gmail.com"
+                class="text-gray-900 dark:text-gray-100"
+              >
+                <span>pybrandao@gmail.com</span>
+              </a>
+            </span>
+            <span class="flex items-center gap-2 text-sm">
+              <i class="fa-solid fa-file-pdf"></i>
+              <a
+                href=""
+                target="_blank"
+                class="text-gray-900 dark:text-gray-100"
+              >
+                <span>Resume</span>
+              </a>
+            </span>
+          </div>
           <h2 id="summary-heading">Summary</h2>
           <p>
             Software Engineer with 6+ years of experience specializing in
@@ -65,29 +109,40 @@
           <h2 id="skills-heading">Technical skills</h2>
           <ul>
             <li>
-              <strong>Programming Languages:</strong> JavaScript, TypeScript,
-              HTML, CSS
+              <strong>Programming Languages</strong><br />
+              JavaScript, TypeScript, HTML, CSS
             </li>
             <li>
-              <span>Frontend:</span> Angular, React, Next.js, Ionic Framework,
-              Tailwind CSS, shadcn/ui (Radix UI), Three.js
+              <strong>Frontend</strong><br />
+              Angular, React, Next.js, Ionic Framework, Tailwind CSS, shadcn/ui
+              (Radix UI), Three.js
             </li>
             <li>
-              <strong>Backend / Databases (working knowledge):</strong> Node.js,
-              REST APIs, PostgreSQL, Drizzle ORM
+              <strong>Backend</strong> (working knowledge)<br />
+              Node.js, REST APIs, PostgreSQL, Drizzle ORM
             </li>
-            <li><strong>Mobile:</strong> Capacitor, Cordova</li>
-            <li><strong>Tools & Other:</strong> Git, Docker, Linux, Figma</li>
             <li>
-              <strong>Human Languages:</strong> Portuguese (native), English
-              (professional), Spanish (conversational)
+              <strong>Mobile</strong><br />
+              Capacitor, Cordova
+            </li>
+            <li>
+              <strong>Tools & Other</strong><br />
+              Git, Docker, Linux, Figma
+            </li>
+            <li>
+              <strong>Human Languages</strong><br />
+              Portuguese (native), English (professional), Spanish
+              (conversational)
             </li>
           </ul>
-          <hr class="lg:border-0" />
+          <hr class="xl:border-0" />
         </section>
       </div>
       <div class="p-2"></div>
-      <div id="right-col" class="px-8 border-0 border-gray-300 dark:border-gray-700 lg:border rounded-2xl">
+      <div
+        id="right-col"
+        class="px-8 border-0 border-gray-300 dark:border-gray-700 xl:border rounded-2xl"
+      >
         <section
           id="experience"
           aria-labelledby="experience-heading"
@@ -317,13 +372,13 @@
         </section>
         <section id="education" aria-labelledby="education-heading" class="p-0">
           <h2 id="education-heading" class="flex items-center justify-between">
-            Academic Education
+            Education & Professional Qualifications
             <details-toggle target-id="education-group"></details-toggle>
           </h2>
           <div id="education-group" class="hidden">
             <article>
               <h3>
-                CS50’s Introduction to Computer Science — Harvard University
+                CS50: Introduction to Computer Science — Harvard University
               </h3>
               <p><time datetime="2019">2019</time> | Remote</p>
             </article>
@@ -340,7 +395,7 @@
               <p>2004 - 2010 | Porto</p>
             </article>
           </div>
-          <hr class="lg:border-0" />
+          <hr class="xl:border-0" />
         </section>
       </div>
     </main>
