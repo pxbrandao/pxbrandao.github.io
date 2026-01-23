@@ -27,264 +27,332 @@
       }
     </style>
 
-    <script>
-      document.addEventListener("DOMContentLoaded", () => {
-        const toggleButton = document.getElementById("theme-toggle");
-        const themeIcon = document.getElementById("theme-icon");
-
-        // Determine initial theme
-        const isDark =
-          localStorage.theme === "dark" ||
-          (!("theme" in localStorage) &&
-            window.matchMedia("(prefers-color-scheme: dark)").matches);
-
-        document.documentElement.classList.toggle("dark", isDark);
-        themeIcon.className = isDark ? "fa-solid fa-moon" : "fa-solid fa-sun";
-
-        // Toggle theme on click
-        toggleButton.addEventListener("click", () => {
-          const darkMode = document.documentElement.classList.toggle("dark");
-          localStorage.theme = darkMode ? "dark" : "light";
-          themeIcon.className = darkMode
-            ? "fa-solid fa-moon"
-            : "fa-solid fa-sun";
-        });
-      });
-    </script>
+    <script type="module" src="layout-toggle.js"></script>
+    <script type="module" src="theme-toggle.js"></script>
+    <script type="module" src="details-toggle.js"></script>
   </head>
 
   <body class="bg-white text-gray-900 dark:bg-gray-900 dark:text-gray-100">
-    <header>
-      <div class="flex justify-end p-2">
-        <button
-          id="theme-toggle"
-          class="px-4 py-2 rounded bg-gray-200 dark:bg-gray-800 text-gray-800 dark:text-gray-200 focus:outline-none flex items-center justify-center gap-2"
-        >
-          <i id="theme-icon" class="fa-solid fa-sun"></i>
-        </button>
+    <header class="fixed w-full">
+      <div class="flex justify-end p-4 gap-2">
+        <layout-toggle></layout-toggle>
+        <theme-toggle></theme-toggle>
       </div>
     </header>
 
-    <main class="prose prose-slate dark:prose-invert mx-auto px-4 pb-16">
-      <section id="personal-details" aria-labelledby="personal-details-heading">
-        <h1 id="personal-details-heading" class="mb-0">Pedro Brandão</h1>
-        <p class="mt-2">Senior software engineer</p>
-      </section>
-
-      <section id="summary" aria-labelledby="summary-heading">
-        <h2 id="summary-heading">Summary</h2>
-        <p>
-          Software Engineer with 6+ years of experience specializing in frontend
-          (Angular and Next.js). Proficient in responsive design and
-          cross-platform implementation. Extensive experience in the healthcare
-          sector, delivering production-ready applications within regulated
-          environments and remote teams.
-        </p>
-      </section>
-
-      <section id="skills">
-        <h2>Technical skills</h2>
-
-        <ul>
-          <li><strong>Languages:</strong> JavaScript, TypeScript, HTML, CSS</li>
-          <li>
-            <strong>Frontend:</strong> Angular, React, Next.js, Ionic Framework,
-            Tailwind CSS, shadcn/ui (Radix UI), Three.js
-          </li>
-          <li>
-            <strong>Backend / Full-Stack:</strong> Node.js, REST APIs,
-            Server-Side Rendering (Next.js)
-          </li>
-          <li>
-            <strong>Databases:</strong> PostgreSQL, Drizzle ORM, SQL
-            (migrations)
-          </li>
-          <li><strong>Mobile:</strong> Capacitor, Cordova</li>
-          <li><strong>Tools & Other:</strong> Git, Docker, Linux, Figma</li>
-        </ul>
-      </section>
-
-      <section id="experience">
-        <h2>Professional Experience</h2>
-
-        <article>
-          <h3>Software Engineer - Cambridge Digital Health</h3>
-          <p>2019 - present | Remote</p>
+    <main class="prose prose-slate dark:prose-invert max-w-6xl mx-auto py-16">
+      <div id="left-col" class="px-8 border-0 border-gray-300 dark:border-gray-700 lg:border rounded-2xl">
+        <section
+          id="summary"
+          aria-labelledby="personal-details-heading"
+          class="p-0"
+        >
+          <h1 id="personal-details-heading" class="mb-0 mt-12">
+            Pedro Brandão
+          </h1>
+          <p class="mt-2">Software engineer</p>
+          <h2 id="summary-heading">Summary</h2>
+          <p>
+            Software Engineer with 6+ years of experience specializing in
+            frontend (Angular and Next.js). Proficient in responsive design and
+            cross-platform implementation. Extensive experience in the
+            healthcare sector, delivering production-ready applications within
+            regulated environments and remote teams.
+          </p>
+          <hr />
+        </section>
+        <section id="skills" aria-labelledby="skills-heading" class="p-0">
+          <h2 id="skills-heading">Technical skills</h2>
           <ul>
             <li>
-              Frontend architecture and development of web and hybrid mobile
-              healthcare applications, dashboards and administrative tools.
+              <strong>Programming Languages:</strong> JavaScript, TypeScript,
+              HTML, CSS
             </li>
             <li>
-              Design and maintenance of scalable, reusable component systems,
-              ensuring UI consistency across platforms.
+              <span>Frontend:</span> Angular, React, Next.js, Ionic Framework,
+              Tailwind CSS, shadcn/ui (Radix UI), Three.js
             </li>
             <li>
-              Cross-functional collaboration with engineers, designers, and
-              product teams to document best practices and maintain cohesive
-              user experiences.
+              <strong>Backend / Databases (working knowledge):</strong> Node.js,
+              REST APIs, PostgreSQL, Drizzle ORM
             </li>
-          </ul>
-
-          <h4>Key projects</h4>
-          <dl>
-            <dt>
-              <strong>Heartfelt Health Integrity</strong> (<span
-                ><time datetime="2024">2024</time> — Present</span
-              >)
-            </dt>
-            <dd>
-              Development of clinical trial management web application used
-              across UK and US sites for patient tracking and trial data
-              management (Next.js, Shadcn/ui, Tailwind CSS, TanStack and Drizzle
-              ORM).
-              <ul>
-                <li>
-                  Deployed in production across multiple UK and US clinical
-                  trial sites.
-                </li>
-              </ul>
-            </dd>
-
-            <dt>
-              <strong>Heartfelt Companion App</strong> (<span
-                ><time datetime="2023">2023</time> — Present</span
-              >)
-            </dt>
-            <dd>
-              Development of a companion app for heart-failure symptom
-              monitoring and medical device connectivity (Angular, Ionic,
-              Capacitor, PostgreSQL).
-              <ul>
-                <li>
-                  Improved patient engagement and consistency of symptom
-                  reporting across trials.
-                </li>
-              </ul>
-            </dd>
-
-            <dt>
-              <strong>NIPE - textbook in a pocket</strong> (<span
-                ><time datetime="2022">2022</time> —
-                <time datetime="2024">2024</time></span
-              >)
-            </dt>
-            <dd>
-              Development of a neonatal screening training tool and web
-              dashboards for content management, user administration, and
-              payment processing (Angular, Ionic, Cordova, PostgreSQL).
-              <ul>
-                <li>
-                  Deployed in production improving access to remote education
-                  and verified information.
-                </li>
-              </ul>
-            </dd>
-
-            <dt>
-              <strong>Advantage Diary</strong> (<span
-                ><time datetime="2022">2022</time> —
-                <time datetime="2023">2023</time></span
-              >)
-            </dt>
-            <dd>
-              Implementation of data visualization components for pain tracking,
-              triggers and notifications (Angular, Ionic, Cordova, PostgreSQL).
-              <ul>
-                <li>
-                  Improved self-monitoring practices through clear
-                  visualizations.
-                </li>
-              </ul>
-            </dd>
-
-            <dt>
-              <strong>BUDS</strong> (<span
-                ><time datetime="2020">2020</time> —
-                <time datetime="2023">2023</time></span
-              >)
-            </dt>
-            <dd>
-              Design, prototyping and development of a parental support mobile
-              app, including integration with external proprietary CMS (Angular,
-              Ionic, Cordova).
-              <ul>
-                <li>
-                  Aimed at improving communication and access to information by
-                  parents.
-                </li>
-              </ul>
-            </dd>
-          </dl>
-        </article>
-        <h2>Previous Professional Experience</h2>
-
-        <article>
-          <h3>Architect - WEPLAN - Engenharia | Construção</h3>
-          <p>2016 - 2019 | Porto, Portugal</p>
-          <ul>
+            <li><strong>Mobile:</strong> Capacitor, Cordova</li>
+            <li><strong>Tools & Other:</strong> Git, Docker, Linux, Figma</li>
             <li>
-              Architectural design, Project management, Construction management.
+              <strong>Human Languages:</strong> Portuguese (native), English
+              (professional), Spanish (conversational)
             </li>
           </ul>
-        </article>
-        <article>
-          <h3>Architect - Cooperativa de Ensino Superior Artístico do Porto</h3>
-          <p>2014 - 2016 | Porto, Portugal</p>
-          <ul>
-            <li>
-              Architectural surveying and design, 3D modelling and rendering.
-            </li>
-          </ul>
-        </article>
-        <article>
-          <h3>Architect - Self-employed</h3>
-          <p>2012 - 2016 | Porto, Portugal</p>
-          <ul>
-            <li>
-              Architectural surveying and design, 3D modelling and rendering,
-              Construction management.
-            </li>
-          </ul>
-        </article>
-        <article>
-          <h3>Architect - Francisco Barata, Arquitecto</h3>
-          <p>2010 - 2012 | Porto, Portugal</p>
-          <ul>
-            <li>Architectural surveying and design.</li>
-          </ul>
-        </article>
-      </section>
+          <hr class="lg:border-0" />
+        </section>
+      </div>
+      <div class="p-2"></div>
+      <div id="right-col" class="px-8 border-0 border-gray-300 dark:border-gray-700 lg:border rounded-2xl">
+        <section
+          id="experience"
+          aria-labelledby="experience-heading"
+          class="p-0"
+        >
+          <h2 id="experience-heading">Professional Experience</h2>
 
-      <section id="education">
-        <h2>Academic Education</h2>
+          <article>
+            <h3>Software Engineer — Cambridge Digital Health</h3>
+            <p><time datetime="2019">2019</time> — Present | Remote</p>
 
-        <article>
-          <h3>CS50’s Introduction to Computer Science - Harvard University</h3>
-          <p>2019 | Remote</p>
-        </article>
+            <ul>
+              <li>
+                Frontend architecture and development of web and hybrid mobile
+                healthcare applications, dashboards and administrative tools.
+              </li>
+              <li>
+                Design and maintenance of scalable, reusable component systems,
+                ensuring UI consistency across platforms.
+              </li>
+              <li>
+                Cross-functional collaboration with engineers, designers, and
+                product teams to document best practices and maintain cohesive
+                user experiences.
+              </li>
+            </ul>
 
-        <article>
-          <h3>Ordem dos Arquitectos - Training and Admission</h3>
-          <p>2010 - 2011 | Porto</p>
-        </article>
+            <h4 class="text-lg">Key projects</h4>
+            <dl>
+              <dt class="flex flex-wrap items-center justify-between gap-2">
+                <span class="flex-grow">
+                  <span>Heartfelt Health Integrity</span>
+                  <span class="font-normal">
+                    |
+                    <time datetime="2024">2024</time>
+                    — Present
+                  </span>
+                </span>
+                <details-toggle
+                  target-id="project-heartfelt-health-integrity"
+                ></details-toggle>
+              </dt>
+              <dd id="project-heartfelt-health-integrity" class="hidden">
+                Development of clinical trial management web application used
+                across UK and US sites for patient tracking and trial data
+                management (Next.js, Shadcn/ui, Tailwind CSS, TanStack and
+                Drizzle ORM).
+                <ul>
+                  <li>
+                    Deployed in production across multiple UK and US clinical
+                    trial sites.
+                  </li>
+                </ul>
+              </dd>
 
-        <article>
-          <h3>Escola Superior Artística do Porto - Masters in Architecture</h3>
-          <p>2004 - 2010 | Porto</p>
-        </article>
-      </section>
+              <dt class="flex flex-wrap items-center justify-between gap-2">
+                <span>
+                  <span>Heartfelt Companion App</span>
+                  <span class="font-normal">
+                    |
+                    <time datetime="2023">2023</time>
+                    - Present
+                  </span>
+                </span>
+                <details-toggle
+                  target-id="project-heartfelt-companion"
+                ></details-toggle>
+              </dt>
+              <dd id="project-heartfelt-companion" class="hidden">
+                Development of a companion app for heart-failure symptom
+                monitoring and medical device connectivity (Angular, Ionic,
+                Capacitor, PostgreSQL).
+                <ul>
+                  <li>
+                    Improved patient engagement and consistency of symptom
+                    reporting across trials.
+                  </li>
+                </ul>
+              </dd>
+
+              <dt class="flex flex-wrap items-center justify-between gap-2">
+                <span>
+                  <span>NIPE - textbook in a pocket</span>
+                  <span class="font-normal">
+                    |
+                    <time datetime="2022">2022</time>
+                    -
+                    <time datetime="2024">2024</time>
+                  </span>
+                </span>
+                <details-toggle target-id="project-nipe"></details-toggle>
+              </dt>
+              <dd id="project-nipe" class="hidden">
+                Development of a neonatal screening training tool and web
+                dashboards for content management, user administration, and
+                payment processing (Angular, Ionic, Cordova, PostgreSQL).
+                <ul>
+                  <li>
+                    Deployed in production improving access to remote education
+                    and verified information.
+                  </li>
+                </ul>
+              </dd>
+
+              <dt class="flex flex-wrap items-center justify-between gap-2">
+                <span>
+                  <span>Advantage Diary</span>
+                  <span class="font-normal">
+                    |
+                    <time datetime="2022">2022</time>
+                    -
+                    <time datetime="2023">2023</time>
+                  </span>
+                </span>
+                <details-toggle target-id="project-advantage"></details-toggle>
+              </dt>
+              <dd id="project-advantage" class="hidden">
+                Implementation of data visualization components for pain
+                tracking, triggers and notifications (Angular, Ionic, Cordova,
+                PostgreSQL).
+                <ul>
+                  <li>
+                    Improved self-monitoring practices through clear
+                    visualizations.
+                  </li>
+                </ul>
+              </dd>
+
+              <dt class="flex flex-wrap items-center justify-between gap-2">
+                <span>
+                  <span>BUDS</span>
+                  <span class="font-normal">
+                    |
+                    <time datetime="2020">2020</time>
+                    -
+                    <time datetime="2023">2023</time>
+                  </span>
+                </span>
+                <details-toggle target-id="project-buds"></details-toggle>
+              </dt>
+              <dd id="project-buds" class="hidden">
+                Design, prototyping and development of a parental support mobile
+                app, including integration with external proprietary CMS
+                (Angular, Ionic, Cordova).
+                <ul>
+                  <li>
+                    Aimed at improving communication and access to information
+                    by parents.
+                  </li>
+                </ul>
+              </dd>
+            </dl>
+          </article>
+          <hr />
+        </section>
+        <section
+          id="prev-experience"
+          aria-labelledby="prev-experience-heading"
+          class="p-0"
+        >
+          <h2
+            id="prev-experience-heading"
+            class="flex items-center justify-between"
+          >
+            Previous Professional Experience
+
+            <details-toggle target-id="prev-experience-group"></details-toggle>
+          </h2>
+          <div id="prev-experience-group" class="hidden">
+            <article>
+              <h3>Architect — WEPLAN - Engenharia | Construção</h3>
+              <p>
+                <time datetime="2016">2016</time> —
+                <time datetime="2019">2019</time> | Porto, Portugal
+              </p>
+
+              <ul>
+                <li>
+                  Architectural design, Project management, Construction
+                  management.
+                </li>
+              </ul>
+            </article>
+
+            <article>
+              <h3>
+                Architect — Cooperativa de Ensino Superior Artístico do Porto
+              </h3>
+              <p>
+                <time datetime="2014">2014</time> —
+                <time datetime="2016">2016</time> | Porto, Portugal
+              </p>
+              <ul>
+                <li>
+                  Architectural surveying and design, 3D modelling and
+                  rendering.
+                </li>
+              </ul>
+            </article>
+
+            <article>
+              <h3>Architect — Self-employed</h3>
+              <p>
+                <time datetime="2012">2012</time> —
+                <time datetime="2016">2016</time> | Porto, Portugal
+              </p>
+              <ul>
+                <li>
+                  Architectural surveying and design, 3D modelling and
+                  rendering, Construction management.
+                </li>
+              </ul>
+            </article>
+
+            <article>
+              <h3>Architect — Francisco Barata, Arquitecto</h3>
+              <p>
+                <time datetime="2010">2010</time> —
+                <time datetime="2012">2012</time> | Porto, Portugal
+              </p>
+              <ul>
+                <li>Architectural surveying and design.</li>
+              </ul>
+            </article>
+          </div>
+          <hr />
+        </section>
+        <section id="education" aria-labelledby="education-heading" class="p-0">
+          <h2 id="education-heading" class="flex items-center justify-between">
+            Academic Education
+            <details-toggle target-id="education-group"></details-toggle>
+          </h2>
+          <div id="education-group" class="hidden">
+            <article>
+              <h3>
+                CS50’s Introduction to Computer Science — Harvard University
+              </h3>
+              <p><time datetime="2019">2019</time> | Remote</p>
+            </article>
+            <article>
+              <h3>
+                Professional Registration & Admission - Ordem dos Arquitectos
+              </h3>
+              <p>2010 - 2011 | Porto</p>
+            </article>
+            <article>
+              <h3>
+                Masters in Architecture - Escola Superior Artística do Porto
+              </h3>
+              <p>2004 - 2010 | Porto</p>
+            </article>
+          </div>
+          <hr class="lg:border-0" />
+        </section>
+      </div>
     </main>
 
-    <footer class="prose prose-slate mx-auto px-4 pb-4">
-      <p>
-        Open to remote or hybrid work. Prefer open-source products with focus on
-        positive impact.
-      </p>
-      <p>
-        Built by Pedro Brandão. View
-        <a href="https://github.com/pxbrandao/pxbrandao.github.io">source</a>.
-      </p>
+    <footer class="w-full">
+      <div class="p-4">
+        <p>
+          Open to remote or hybrid work. Prefer open-source products with focus
+          positive impact.
+        </p>
+        <p>Built by Pedro Brandão. View source on GitHub.</p>
+      </div>
     </footer>
   </body>
 </html>
