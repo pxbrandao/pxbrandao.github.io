@@ -21,6 +21,7 @@ class LayoutToggle extends HTMLElement {
 
     this.button.addEventListener('click', () => {
       this.main.classList.toggle('md:flex-row');
+      this.main.classList.toggle('md:max-w-6xl');
       this.updateIcon();
     });
 
