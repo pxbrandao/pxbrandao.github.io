@@ -5,11 +5,11 @@ class DetailsToggle extends HTMLElement {
 
     this.innerHTML = `
       <button type="button"
-              class="flex items-center gap-2 text-sm font-medium
-                     text-neutral-900 dark:text-neutral-100
-                     hover:underline focus:outline-none"
+              class="flex items-center gap-2 p-2 text-sm font-medium rounded-full
+                    bg-neutral-300 dark:bg-neutral-700
+                    text-neutral-800 dark:text-neutral-200
+                    hover:underline focus:outline-none"
               aria-expanded="false">
-              <span>Show details</span>
         <i class="fa-solid fa-plus"></i>
       </button>
     `;
@@ -36,10 +36,8 @@ class DetailsToggle extends HTMLElement {
 
   syncState(isVisible) {
     this.button.setAttribute('aria-expanded', String(isVisible));
-    this.label.textContent = isVisible ? 'Hide details' : 'Show details';
-    this.icon.className = isVisible
-      ? 'fa-solid fa-minus'
-      : 'fa-solid fa-plus';
+    // this.label.textContent = isVisible ? 'Hide details' : 'Show details';
+    this.icon.className = isVisible ? 'fa-solid fa-minus' : 'fa-solid fa-plus';
   }
 }
 
