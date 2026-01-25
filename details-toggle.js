@@ -9,6 +9,7 @@ class DetailsToggle extends HTMLElement {
                     bg-neutral-300 dark:bg-neutral-700
                     text-neutral-800 dark:text-neutral-200
                     hover:underline focus:outline-none"
+              aria-label="Toggle details"
               aria-expanded="false">
         <i class="fa-solid fa-plus"></i>
       </button>
