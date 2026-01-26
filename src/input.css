@@ -1,0 +1,45 @@
+@import url("https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap");
+@import "tailwindcss"; /* this works in your setup */
+@plugin "@tailwindcss/typography";
+@custom-variant dark (&:where(.dark, .dark *));
+
+body {
+  font-family: "Raleway", ui-sans-serif, system-ui;
+}
+
+/* styles.css */
+#right-col,
+#left-col {
+  @apply prose-neutral dark:prose-invert border-0 md:border;
+}
+
+@media (prefers-color-scheme: dark) {
+  #right-col,
+  #left-col {
+    @apply prose-neutral dark:prose-invert border-0 md:border;
+  }
+}
+
+@layer base {
+  :root {
+    --color-bg: theme(colors.neutral.200);
+    /* --color-text: theme(colors.neutral.800); */
+    --color-border: theme(colors.neutral.300);
+  }
+
+  .dark {
+    --color-bg: theme(colors.neutral.800);
+    /* --color-text: theme(colors.neutral.200); */
+    --color-border: theme(colors.neutral.700);
+  }
+
+  body {
+    background-color: var(--color-bg);
+    /* color: var(--color-text); */
+    border: var(--color-border);
+  }
+}
+/* #left-col,
+#right-col {
+  border:  var(--color-border);
+} */

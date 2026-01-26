@@ -8,38 +8,18 @@
       content="Personal website of Pedro Brandão, a frontend software developer working on production healthcare web and mobile applications with modern JavaScript frameworks."
     />
     <title>Pedro Brandão</title>
-    <script src="https://cdn.tailwindcss.com?plugins=typography"></script>
-    <script>
-      tailwind.config = {
-        content: ["./**/*.html", "./**/*.js"],
-        darkMode: "class",
-        theme: { extend: {} },
-      };
-    </script>
+    <link rel="stylesheet" href="dist/output.css" />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
     />
-
-    <link
-      href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap"
-      rel="stylesheet"
-    />
-
-    <style>
-      body {
-        font-family: "Raleway", ui-sans-serif, system-ui;
-      }
-    </style>
 
     <script type="module" src="layout-toggle.js"></script>
     <script type="module" src="theme-toggle.js"></script>
     <script type="module" src="details-toggle.js"></script>
   </head>
 
-  <body
-    class="bg-neutral-200 text-neutral-800 dark:bg-neutral-800 dark:text-neutral-200"
-  >
+  <body class="">
     <header class="fixed w-full">
       <div class="flex justify-end p-4 gap-2">
         <span class="hidden md:block">
@@ -54,7 +34,7 @@
     >
       <div
         id="left-col"
-        class="px-8 border-0 border-neutral-300 dark:border-neutral-700 rounded-2xl md:flex-[1] md:border prose prose-neutral prose-sm md:prose-base dark:prose-invert max-w-none"
+        class="px-8  rounded-2xl md:flex-[1] prose prose-sm md:prose-base max-w-none"
       >
         <section id="summary" aria-labelledby="personal-details-heading">
           <h1 id="personal-details-heading" class="!mb-0 !mt-12">
@@ -64,11 +44,7 @@
           <div class="flex flex-col gap-2">
             <span class="flex items-center gap-2 text-sm">
               <i class="fab fa-github"></i>
-              <a
-                href="https://github.com/pxbrandao"
-                target="_blank"
-                class="text-neutral-800 dark:text-neutral-200"
-              >
+              <a href="https://github.com/pxbrandao" target="_blank" class="">
                 <span>github.com/pxbrandao</span>
               </a>
             </span>
@@ -77,27 +53,20 @@
               <a
                 href="https://www.linkedin.com/in/opedrobrandao/"
                 target="_blank"
-                class="text-neutral-800 dark:text-neutral-200"
+                class=""
               >
                 <span>linkedin.com/in/opedrobrandao</span>
               </a>
             </span>
             <span class="flex items-center gap-2 text-sm">
               <i class="fa-solid fa-envelope"></i>
-              <a
-                href="mailto:pybrandao@gmail.com"
-                class="text-neutral-800 dark:text-neutral-200"
-              >
+              <a href="mailto:pybrandao@gmail.com" class="">
                 <span>pybrandao@gmail.com</span>
               </a>
             </span>
             <span class="flex items-center gap-2 text-sm">
               <i class="fa-solid fa-file-pdf"></i>
-              <a
-                href=""
-                target="_blank"
-                class="text-neutral-800 dark:text-neutral-200"
-              >
+              <a href="" target="_blank" class="">
                 <span>Resume</span>
               </a>
             </span>
@@ -111,7 +80,7 @@
             regulated environments and remote teams.
           </p>
         </section>
-        <hr class="border-neutral-300 dark:border-neutral-700" />
+        <hr class="" />
         <section id="skills" aria-labelledby="skills-heading">
           <h2 id="skills-heading">Technical skills</h2>
           <ul class="list-none space-y-4 !pl-0">
@@ -119,22 +88,22 @@
               <strong>Programming Languages</strong><br />
               <div class="flex flex-wrap gap-2 mt-2">
                 <span
-                  class="inline-flex items-center gap-2 px-2 py-2 text-sm rounded-full border border-neutral-300 dark:border-neutral-700"
+                  class="inline-flex items-center gap-2 px-2 py-2 text-sm rounded-full border"
                 >
                   <i class="fa-brands fa-js"></i> JavaScript
                 </span>
                 <span
-                  class="inline-flex items-center gap-2 px-2 py-2 text-sm rounded-full border border-neutral-300 dark:border-neutral-700"
+                  class="inline-flex items-center gap-2 px-2 py-2 text-sm rounded-full border"
                 >
                   <i class="fa-brands fa-ts"></i> TypeScript
                 </span>
                 <span
-                  class="inline-flex items-center gap-2 px-2 py-2 text-sm rounded-full border border-neutral-300 dark:border-neutral-700"
+                  class="inline-flex items-center gap-2 px-2 py-2 text-sm rounded-full border"
                 >
                   <i class="fa-brands fa-html5"></i> HTML
                 </span>
                 <span
-                  class="inline-flex items-center gap-2 px-2 py-2 text-sm rounded-full border border-neutral-300 dark:border-neutral-700"
+                  class="inline-flex items-center gap-2 px-2 py-2 text-sm rounded-full border"
                 >
                   <i class="fa-brands fa-css3-alt"></i> CSS
                 </span>
@@ -145,37 +114,37 @@
               <strong>Frontend</strong><br />
               <div class="flex flex-wrap gap-2 mt-2">
                 <span
-                  class="inline-flex items-center gap-2 px-2 py-2 text-sm rounded-full border border-neutral-300 dark:border-neutral-700"
+                  class="inline-flex items-center gap-2 px-2 py-2 text-sm rounded-full border"
                 >
                   <i class="fa-brands fa-angular"></i> Angular
                 </span>
                 <span
-                  class="inline-flex items-center gap-2 px-2 py-2 text-sm rounded-full border border-neutral-300 dark:border-neutral-700"
+                  class="inline-flex items-center gap-2 px-2 py-2 text-sm rounded-full border"
                 >
                   <i class="fa-brands fa-react"></i> React
                 </span>
                 <span
-                  class="inline-flex items-center gap-2 px-2 py-2 text-sm rounded-full border border-neutral-300 dark:border-neutral-700"
+                  class="inline-flex items-center gap-2 px-2 py-2 text-sm rounded-full border"
                 >
                   <i class="fa-brands fa-react"></i> Next.js
                 </span>
                 <span
-                  class="inline-flex items-center gap-2 px-2 py-2 text-sm rounded-full border border-neutral-300 dark:border-neutral-700"
+                  class="inline-flex items-center gap-2 px-2 py-2 text-sm rounded-full border"
                 >
                   <i class="fa-solid fa-mobile-screen-button"></i> Ionic
                 </span>
                 <span
-                  class="inline-flex items-center gap-2 px-2 py-2 text-sm rounded-full border border-neutral-300 dark:border-neutral-700"
+                  class="inline-flex items-center gap-2 px-2 py-2 text-sm rounded-full border"
                 >
                   <i class="fa-solid fa-wind"></i> Tailwind CSS
                 </span>
                 <span
-                  class="inline-flex items-center gap-2 px-2 py-2 text-sm rounded-full border border-neutral-300 dark:border-neutral-700"
+                  class="inline-flex items-center gap-2 px-2 py-2 text-sm rounded-full border"
                 >
                   <i class="fa-solid fa-layer-group"></i> shadcn/ui
                 </span>
                 <span
-                  class="inline-flex items-center gap-2 px-2 py-2 text-sm rounded-full border border-neutral-300 dark:border-neutral-700"
+                  class="inline-flex items-center gap-2 px-2 py-2 text-sm rounded-full border"
                 >
                   <i class="fa-solid fa-cube"></i> Three.js
                 </span>
@@ -186,22 +155,22 @@
               <strong>Backend</strong> (working knowledge)<br />
               <div class="flex flex-wrap gap-2 mt-2">
                 <span
-                  class="inline-flex items-center gap-2 px-2 py-2 text-sm rounded-full border border-neutral-300 dark:border-neutral-700"
+                  class="inline-flex items-center gap-2 px-2 py-2 text-sm rounded-full border"
                 >
                   <i class="fa-brands fa-node-js"></i> Node.js
                 </span>
                 <span
-                  class="inline-flex items-center gap-2 px-2 py-2 text-sm rounded-full border border-neutral-300 dark:border-neutral-700"
+                  class="inline-flex items-center gap-2 px-2 py-2 text-sm rounded-full border"
                 >
                   <i class="fa-solid fa-plug"></i> REST APIs
                 </span>
                 <span
-                  class="inline-flex items-center gap-2 px-2 py-2 text-sm rounded-full border border-neutral-300 dark:border-neutral-700"
+                  class="inline-flex items-center gap-2 px-2 py-2 text-sm rounded-full border"
                 >
                   <i class="fa-solid fa-database"></i> PostgreSQL
                 </span>
                 <span
-                  class="inline-flex items-center gap-2 px-2 py-2 text-sm rounded-full border border-neutral-300 dark:border-neutral-700"
+                  class="inline-flex items-center gap-2 px-2 py-2 text-sm rounded-full border"
                 >
                   <i class="fa-solid fa-table"></i> Drizzle ORM
                 </span>
@@ -212,12 +181,12 @@
               <strong>Mobile</strong><br />
               <div class="flex flex-wrap gap-2 mt-2">
                 <span
-                  class="inline-flex items-center gap-2 px-2 py-2 text-sm rounded-full border border-neutral-300 dark:border-neutral-700"
+                  class="inline-flex items-center gap-2 px-2 py-2 text-sm rounded-full border"
                 >
                   <i class="fa-solid fa-bolt"></i> Capacitor
                 </span>
                 <span
-                  class="inline-flex items-center gap-2 px-2 py-2 text-sm rounded-full border border-neutral-300 dark:border-neutral-700"
+                  class="inline-flex items-center gap-2 px-2 py-2 text-sm rounded-full border"
                 >
                   <i class="fa-solid fa-plug-circle-bolt"></i> Cordova
                 </span>
@@ -228,22 +197,22 @@
               <strong>Tools &amp; Other</strong><br />
               <div class="flex flex-wrap gap-2 mt-2">
                 <span
-                  class="inline-flex items-center gap-2 px-2 py-2 text-sm rounded-full border border-neutral-300 dark:border-neutral-700"
+                  class="inline-flex items-center gap-2 px-2 py-2 text-sm rounded-full border"
                 >
                   <i class="fa-brands fa-git-alt"></i> Git
                 </span>
                 <span
-                  class="inline-flex items-center gap-2 px-2 py-2 text-sm rounded-full border border-neutral-300 dark:border-neutral-700"
+                  class="inline-flex items-center gap-2 px-2 py-2 text-sm rounded-full border"
                 >
                   <i class="fa-brands fa-docker"></i> Docker
                 </span>
                 <span
-                  class="inline-flex items-center gap-2 px-2 py-2 text-sm rounded-full border border-neutral-300 dark:border-neutral-700"
+                  class="inline-flex items-center gap-2 px-2 py-2 text-sm rounded-full border"
                 >
                   <i class="fa-brands fa-linux"></i> Linux
                 </span>
                 <span
-                  class="inline-flex items-center gap-2 px-2 py-2 text-sm rounded-full border border-neutral-300 dark:border-neutral-700"
+                  class="inline-flex items-center gap-2 px-2 py-2 text-sm rounded-full border"
                 >
                   <i class="fa-brands fa-figma"></i> Figma
                 </span>
@@ -254,17 +223,17 @@
               <strong>Human Languages</strong><br />
               <div class="flex flex-wrap gap-2 mt-2">
                 <span
-                  class="inline-flex items-center gap-2 px-2 py-2 text-sm rounded-full border border-neutral-300 dark:border-neutral-700"
+                  class="inline-flex items-center gap-2 px-2 py-2 text-sm rounded-full border"
                 >
                   <i class="fa-solid fa-language"></i> Portuguese
                 </span>
                 <span
-                  class="inline-flex items-center gap-2 px-2 py-2 text-sm rounded-full border border-neutral-300 dark:border-neutral-700"
+                  class="inline-flex items-center gap-2 px-2 py-2 text-sm rounded-full border"
                 >
                   <i class="fa-solid fa-language"></i> English
                 </span>
                 <span
-                  class="inline-flex items-center gap-2 px-2 py-2 text-sm rounded-full border border-neutral-300 dark:border-neutral-700"
+                  class="inline-flex items-center gap-2 px-2 py-2 text-sm rounded-full border"
                 >
                   <i class="fa-solid fa-language"></i> Spanish
                 </span>
@@ -272,11 +241,11 @@
             </li>
           </ul>
         </section>
-        <hr class="border-neutral-300 dark:border-neutral-700 mb-0 md:hidden" />
+        <hr class="xl:border-0 mb-0 md:hidden" />
       </div>
       <div
         id="right-col"
-        class="px-8 border-0 border-neutral-300 dark:border-neutral-700 rounded-2xl md:flex-[2] md:border m-0 prose prose-neutral prose-sm md:prose-base dark:prose-invert max-w-none"
+        class="px-8 rounded-2xl md:flex-[2] prose prose-sm md:prose-base max-w-none"
       >
         <section id="experience" aria-labelledby="experience-heading">
           <h2 id="experience-heading">Professional Experience</h2>
@@ -428,7 +397,7 @@
             </dl>
           </article>
         </section>
-        <hr class="border-neutral-300 dark:border-neutral-700" />
+        <hr class="" />
         <section id="prev-experience" aria-labelledby="prev-experience-heading">
           <h2
             id="prev-experience-heading"
@@ -496,7 +465,7 @@
             </article>
           </div>
         </section>
-        <hr class="border-neutral-300 dark:border-neutral-700" />
+        <hr class="" />
         <section id="education" aria-labelledby="education-heading">
           <h2 id="education-heading" class="flex items-center justify-between">
             Education & Professional Qualifications
@@ -523,9 +492,7 @@
             </article>
           </div>
         </section>
-        <hr
-          class="border-neutral-300 dark:border-neutral-700 xl:border-0 mb-0 md:hidden"
-        />
+        <hr class="xl:border-0 mb-0 md:hidden" />
       </div>
     </main>
 
