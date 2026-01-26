@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       name="description"
-      content="Portfolio of Pedro Brandão, a Software Engineer specializing in Frontend development (Angular/Next.js) with 6+ years of experience."
+      content="Personal website of Pedro Brandão, a frontend software developer working on production healthcare web and mobile applications with modern JavaScript frameworks."
     />
     <title>Pedro Brandão</title>
     <script src="https://cdn.tailwindcss.com?plugins=typography"></script>
@@ -32,255 +32,508 @@
       }
     </style>
 
-    <script type="module" src="theme-toggle.js"></script>
     <script type="module" src="layout-toggle.js"></script>
+    <script type="module" src="theme-toggle.js"></script>
+    <script type="module" src="details-toggle.js"></script>
   </head>
 
-  <body class="bg-white text-gray-900 dark:bg-gray-900 dark:text-gray-100">
+  <body
+    class="bg-neutral-200 text-neutral-800 dark:bg-neutral-800 dark:text-neutral-200"
+  >
     <header class="fixed w-full">
-      <div class="flex justify-end p-2 gap-2">
-        <layout-toggle></layout-toggle>
+      <div class="flex justify-end p-4 gap-2">
+        <span class="hidden md:block">
+          <layout-toggle></layout-toggle>
+        </span>
         <theme-toggle></theme-toggle>
       </div>
     </header>
 
-    <main class="prose prose-slate dark:prose-invert mx-auto px-4 py-16">
-      <section id="personal-details" aria-labelledby="personal-details-heading">
-        <h1 id="personal-details-heading" class="mb-0">Pedro Brandão</h1>
-        <p class="mt-2">Software engineer</p>
-      </section>
-
-      <section id="summary" aria-labelledby="summary-heading">
-        <h2 id="summary-heading">Summary</h2>
-        <p>
-          Software Engineer with 6+ years of experience specializing in frontend
-          (Angular and Next.js). Proficient in responsive design and
-          cross-platform implementation. Extensive experience in the healthcare
-          sector, delivering production-ready applications within regulated
-          environments and remote teams.
-        </p>
-      </section>
-
-      <section id="skills" aria-labelledby="skills-heading">
-        <h2 id="skills-heading">Technical skills</h2>
-        <ul>
-          <li>
-            <strong>Programming Languages:</strong> JavaScript, TypeScript,
-            HTML, CSS
-          </li>
-          <li>
-            <span>Frontend:</span> Angular, React, Next.js, Ionic Framework,
-            Tailwind CSS, shadcn/ui (Radix UI), Three.js
-          </li>
-          <li>
-            <strong>Backend / Databases (working knowledge):</strong> Node.js,
-            REST APIs, PostgreSQL, Drizzle ORM
-          </li>
-          <li><strong>Mobile:</strong> Capacitor, Cordova</li>
-          <li><strong>Tools & Other:</strong> Git, Docker, Linux, Figma</li>
-          <li>
-            <strong>Human Languages:</strong> Portuguese (native), English
-            (professional), Spanish (conversational)
-          </li>
-        </ul>
-      </section>
-
-      <section id="experience" aria-labelledby="experience-heading">
-        <h2 id="experience-heading">Professional Experience</h2>
-
-        <article>
-          <h3>Software Engineer — Cambridge Digital Health</h3>
-          <p><time datetime="2019">2019</time> — Present | Remote</p>
-
-          <ul>
-            <li>
-              Frontend architecture and development of web and hybrid mobile
-              healthcare applications, dashboards and administrative tools.
+    <main
+      class="flex flex-col md:flex-row max-w-4xl md:max-w-6xl py-16 mx-0 md:mx-16 md:gap-4"
+    >
+      <div
+        id="left-col"
+        class="px-8 border-0 border-neutral-300 dark:border-neutral-700 rounded-2xl md:flex-[1] md:border prose prose-neutral prose-sm md:prose-base dark:prose-invert max-w-none"
+      >
+        <section id="summary" aria-labelledby="personal-details-heading">
+          <h1 id="personal-details-heading" class="!mb-0 !mt-12">
+            Pedro Brandão
+          </h1>
+          <p class="mt-2">Software developer</p>
+          <div class="flex flex-col gap-2">
+            <span class="flex items-center gap-2 text-sm">
+              <i class="fab fa-github"></i>
+              <a
+                href="https://github.com/pxbrandao"
+                target="_blank"
+                class="text-neutral-800 dark:text-neutral-200"
+              >
+                <span>github.com/pxbrandao</span>
+              </a>
+            </span>
+            <span class="flex items-center gap-2 text-sm">
+              <i class="fab fa-linkedin"></i>
+              <a
+                href="https://www.linkedin.com/in/opedrobrandao/"
+                target="_blank"
+                class="text-neutral-800 dark:text-neutral-200"
+              >
+                <span>linkedin.com/in/opedrobrandao</span>
+              </a>
+            </span>
+            <span class="flex items-center gap-2 text-sm">
+              <i class="fa-solid fa-envelope"></i>
+              <a
+                href="mailto:pybrandao@gmail.com"
+                class="text-neutral-800 dark:text-neutral-200"
+              >
+                <span>pybrandao@gmail.com</span>
+              </a>
+            </span>
+            <span class="flex items-center gap-2 text-sm">
+              <i class="fa-solid fa-file-pdf"></i>
+              <a
+                href=""
+                target="_blank"
+                class="text-neutral-800 dark:text-neutral-200"
+              >
+                <span>Resume</span>
+              </a>
+            </span>
+          </div>
+          <h2 id="summary-heading">Summary</h2>
+          <p>
+            Software Developer with 6+ years of experience specializing in
+            frontend (Angular and Next.js). Proficient in responsive design and
+            cross-platform implementation. Extensive experience in the
+            healthcare sector, delivering production-ready applications within
+            regulated environments and remote teams.
+          </p>
+        </section>
+        <hr class="border-neutral-300 dark:border-neutral-700" />
+        <section id="skills" aria-labelledby="skills-heading">
+          <h2 id="skills-heading">Technical skills</h2>
+          <ul class="list-none space-y-4 !pl-0">
+            <li class="!pl-0">
+              <strong>Programming Languages</strong><br />
+              <div class="flex flex-wrap gap-2 mt-2">
+                <span
+                  class="inline-flex items-center gap-2 px-2 py-2 text-sm rounded-full border border-neutral-300 dark:border-neutral-700"
+                >
+                  <i class="fa-brands fa-js"></i> JavaScript
+                </span>
+                <span
+                  class="inline-flex items-center gap-2 px-2 py-2 text-sm rounded-full border border-neutral-300 dark:border-neutral-700"
+                >
+                  <i class="fa-brands fa-ts"></i> TypeScript
+                </span>
+                <span
+                  class="inline-flex items-center gap-2 px-2 py-2 text-sm rounded-full border border-neutral-300 dark:border-neutral-700"
+                >
+                  <i class="fa-brands fa-html5"></i> HTML
+                </span>
+                <span
+                  class="inline-flex items-center gap-2 px-2 py-2 text-sm rounded-full border border-neutral-300 dark:border-neutral-700"
+                >
+                  <i class="fa-brands fa-css3-alt"></i> CSS
+                </span>
+              </div>
             </li>
-            <li>
-              Design and maintenance of scalable, reusable component systems,
-              ensuring UI consistency across platforms.
+
+            <li class="!pl-0">
+              <strong>Frontend</strong><br />
+              <div class="flex flex-wrap gap-2 mt-2">
+                <span
+                  class="inline-flex items-center gap-2 px-2 py-2 text-sm rounded-full border border-neutral-300 dark:border-neutral-700"
+                >
+                  <i class="fa-brands fa-angular"></i> Angular
+                </span>
+                <span
+                  class="inline-flex items-center gap-2 px-2 py-2 text-sm rounded-full border border-neutral-300 dark:border-neutral-700"
+                >
+                  <i class="fa-brands fa-react"></i> React
+                </span>
+                <span
+                  class="inline-flex items-center gap-2 px-2 py-2 text-sm rounded-full border border-neutral-300 dark:border-neutral-700"
+                >
+                  <i class="fa-brands fa-react"></i> Next.js
+                </span>
+                <span
+                  class="inline-flex items-center gap-2 px-2 py-2 text-sm rounded-full border border-neutral-300 dark:border-neutral-700"
+                >
+                  <i class="fa-solid fa-mobile-screen-button"></i> Ionic
+                </span>
+                <span
+                  class="inline-flex items-center gap-2 px-2 py-2 text-sm rounded-full border border-neutral-300 dark:border-neutral-700"
+                >
+                  <i class="fa-solid fa-wind"></i> Tailwind CSS
+                </span>
+                <span
+                  class="inline-flex items-center gap-2 px-2 py-2 text-sm rounded-full border border-neutral-300 dark:border-neutral-700"
+                >
+                  <i class="fa-solid fa-layer-group"></i> shadcn/ui
+                </span>
+                <span
+                  class="inline-flex items-center gap-2 px-2 py-2 text-sm rounded-full border border-neutral-300 dark:border-neutral-700"
+                >
+                  <i class="fa-solid fa-cube"></i> Three.js
+                </span>
+              </div>
             </li>
-            <li>
-              Cross-functional collaboration with engineers, designers, and
-              product teams to document best practices and maintain cohesive
-              user experiences.
+
+            <li class="!pl-0">
+              <strong>Backend</strong> (working knowledge)<br />
+              <div class="flex flex-wrap gap-2 mt-2">
+                <span
+                  class="inline-flex items-center gap-2 px-2 py-2 text-sm rounded-full border border-neutral-300 dark:border-neutral-700"
+                >
+                  <i class="fa-brands fa-node-js"></i> Node.js
+                </span>
+                <span
+                  class="inline-flex items-center gap-2 px-2 py-2 text-sm rounded-full border border-neutral-300 dark:border-neutral-700"
+                >
+                  <i class="fa-solid fa-plug"></i> REST APIs
+                </span>
+                <span
+                  class="inline-flex items-center gap-2 px-2 py-2 text-sm rounded-full border border-neutral-300 dark:border-neutral-700"
+                >
+                  <i class="fa-solid fa-database"></i> PostgreSQL
+                </span>
+                <span
+                  class="inline-flex items-center gap-2 px-2 py-2 text-sm rounded-full border border-neutral-300 dark:border-neutral-700"
+                >
+                  <i class="fa-solid fa-table"></i> Drizzle ORM
+                </span>
+              </div>
+            </li>
+
+            <li class="!pl-0">
+              <strong>Mobile</strong><br />
+              <div class="flex flex-wrap gap-2 mt-2">
+                <span
+                  class="inline-flex items-center gap-2 px-2 py-2 text-sm rounded-full border border-neutral-300 dark:border-neutral-700"
+                >
+                  <i class="fa-solid fa-bolt"></i> Capacitor
+                </span>
+                <span
+                  class="inline-flex items-center gap-2 px-2 py-2 text-sm rounded-full border border-neutral-300 dark:border-neutral-700"
+                >
+                  <i class="fa-solid fa-plug-circle-bolt"></i> Cordova
+                </span>
+              </div>
+            </li>
+
+            <li class="!pl-0">
+              <strong>Tools &amp; Other</strong><br />
+              <div class="flex flex-wrap gap-2 mt-2">
+                <span
+                  class="inline-flex items-center gap-2 px-2 py-2 text-sm rounded-full border border-neutral-300 dark:border-neutral-700"
+                >
+                  <i class="fa-brands fa-git-alt"></i> Git
+                </span>
+                <span
+                  class="inline-flex items-center gap-2 px-2 py-2 text-sm rounded-full border border-neutral-300 dark:border-neutral-700"
+                >
+                  <i class="fa-brands fa-docker"></i> Docker
+                </span>
+                <span
+                  class="inline-flex items-center gap-2 px-2 py-2 text-sm rounded-full border border-neutral-300 dark:border-neutral-700"
+                >
+                  <i class="fa-brands fa-linux"></i> Linux
+                </span>
+                <span
+                  class="inline-flex items-center gap-2 px-2 py-2 text-sm rounded-full border border-neutral-300 dark:border-neutral-700"
+                >
+                  <i class="fa-brands fa-figma"></i> Figma
+                </span>
+              </div>
+            </li>
+
+            <li class="!pl-0">
+              <strong>Human Languages</strong><br />
+              <div class="flex flex-wrap gap-2 mt-2">
+                <span
+                  class="inline-flex items-center gap-2 px-2 py-2 text-sm rounded-full border border-neutral-300 dark:border-neutral-700"
+                >
+                  <i class="fa-solid fa-language"></i> Portuguese
+                </span>
+                <span
+                  class="inline-flex items-center gap-2 px-2 py-2 text-sm rounded-full border border-neutral-300 dark:border-neutral-700"
+                >
+                  <i class="fa-solid fa-language"></i> English
+                </span>
+                <span
+                  class="inline-flex items-center gap-2 px-2 py-2 text-sm rounded-full border border-neutral-300 dark:border-neutral-700"
+                >
+                  <i class="fa-solid fa-language"></i> Spanish
+                </span>
+              </div>
             </li>
           </ul>
+        </section>
+        <hr class="border-neutral-300 dark:border-neutral-700 mb-0 md:hidden" />
+      </div>
+      <div
+        id="right-col"
+        class="px-8 border-0 border-neutral-300 dark:border-neutral-700 rounded-2xl md:flex-[2] md:border m-0 prose prose-neutral prose-sm md:prose-base dark:prose-invert max-w-none"
+      >
+        <section id="experience" aria-labelledby="experience-heading">
+          <h2 id="experience-heading">Professional Experience</h2>
 
-          <h4>Key projects</h4>
-          <dl>
-            <dt>
-              <span>Heartfelt Health Integrity</span> (<span
-                ><time datetime="2024">2024</time> — Present</span
-              >)
-            </dt>
-            <dd>
-              Development of clinical trial management web application used
-              across UK and US sites for patient tracking and trial data
-              management (Next.js, Shadcn/ui, Tailwind CSS, TanStack and Drizzle
-              ORM).
-              <ul>
-                <li>
-                  Deployed in production across multiple UK and US clinical
-                  trial sites.
-                </li>
-              </ul>
-            </dd>
-
-            <dt>
-              <span>Heartfelt Companion App</span> (<span
-                ><time datetime="2023">2023</time> — Present</span
-              >)
-            </dt>
-            <dd>
-              Development of a companion app for heart-failure symptom
-              monitoring and medical device connectivity (Angular, Ionic,
-              Capacitor, PostgreSQL).
-              <ul>
-                <li>
-                  Improved patient engagement and consistency of symptom
-                  reporting across trials.
-                </li>
-              </ul>
-            </dd>
-
-            <dt>
-              <span>NIPE - textbook in a pocket</span> (<span
-                ><time datetime="2022">2022</time> —
-                <time datetime="2024">2024</time></span
-              >)
-            </dt>
-            <dd>
-              Development of a neonatal screening training tool and web
-              dashboards for content management, user administration, and
-              payment processing (Angular, Ionic, Cordova, PostgreSQL).
-              <ul>
-                <li>
-                  Deployed in production improving access to remote education
-                  and verified information.
-                </li>
-              </ul>
-            </dd>
-
-            <dt>
-              <span>Advantage Diary</span> (<span
-                ><time datetime="2022">2022</time> —
-                <time datetime="2023">2023</time></span
-              >)
-            </dt>
-            <dd>
-              Implementation of data visualization components for pain tracking,
-              triggers and notifications (Angular, Ionic, Cordova, PostgreSQL).
-              <ul>
-                <li>
-                  Improved self-monitoring practices through clear
-                  visualizations.
-                </li>
-              </ul>
-            </dd>
-
-            <dt>
-              <span>BUDS</span> (<span
-                ><time datetime="2020">2020</time> —
-                <time datetime="2023">2023</time></span
-              >)
-            </dt>
-            <dd>
-              Design, prototyping and development of a parental support mobile
-              app, including integration with external proprietary CMS (Angular,
-              Ionic, Cordova).
-              <ul>
-                <li>
-                  Aimed at improving communication and access to information by
-                  parents.
-                </li>
-              </ul>
-            </dd>
-          </dl>
-        </article>
-
-        <h2 id="prev-experience-heading">Previous Professional Experience</h2>
-        <div role="group" aria-labelledby="prev-experience-heading">
           <article>
-            <h3>Architect — WEPLAN - Engenharia | Construção</h3>
-            <p>
-              <time datetime="2016">2016</time> —
-              <time datetime="2019">2019</time> | Porto, Portugal
-            </p>
+            <h3>Software Developer — Cambridge Digital Health</h3>
+            <p><time datetime="2019">2019</time> — Present | Remote</p>
+
             <ul>
               <li>
-                Architectural design, Project management, Construction
-                management.
+                Frontend architecture and development of web and hybrid mobile
+                healthcare applications, dashboards and administrative tools.
               </li>
-            </ul>
-          </article>
-
-          <article>
-            <h3>
-              Architect — Cooperativa de Ensino Superior Artístico do Porto
-            </h3>
-            <p>
-              <time datetime="2014">2014</time> —
-              <time datetime="2016">2016</time> | Porto, Portugal
-            </p>
-            <ul>
               <li>
-                Architectural surveying and design, 3D modelling and rendering.
+                Design and maintenance of scalable, reusable component systems,
+                ensuring UI consistency across platforms.
               </li>
-            </ul>
-          </article>
-
-          <article>
-            <h3>Architect — Self-employed</h3>
-            <p>
-              <time datetime="2012">2012</time> —
-              <time datetime="2016">2016</time> | Porto, Portugal
-            </p>
-            <ul>
               <li>
-                Architectural surveying and design, 3D modelling and rendering,
-                Construction management.
+                Cross-functional collaboration with engineers, designers, and
+                product teams to document best practices and maintain cohesive
+                user experiences.
               </li>
             </ul>
-          </article>
 
-          <article>
-            <h3>Architect — Francisco Barata, Arquitecto</h3>
-            <p>
-              <time datetime="2010">2010</time> —
-              <time datetime="2012">2012</time> | Porto, Portugal
-            </p>
-            <ul>
-              <li>Architectural surveying and design.</li>
-            </ul>
-          </article>
-        </div>
-      </section>
+            <h4 class="text-lg">Key projects</h4>
+            <dl>
+              <dt class="flex flex-wrap items-center justify-between gap-2">
+                <span class="flex-grow">
+                  <span>Heartfelt Health Integrity</span>
+                  <span class="font-normal">
+                    |
+                    <time datetime="2024">2024</time>
+                    — Present
+                  </span>
+                </span>
+                <details-toggle
+                  target-id="project-heartfelt-health-integrity"
+                ></details-toggle>
+              </dt>
+              <dd id="project-heartfelt-health-integrity" class="hidden">
+                Development of clinical trial management web application used
+                across UK and US sites for patient tracking and trial data
+                management (Next.js, Shadcn/ui, Tailwind CSS, TanStack and
+                Drizzle ORM).
+                <ul>
+                  <li>
+                    Deployed in production across multiple UK and US clinical
+                    trial sites.
+                  </li>
+                </ul>
+              </dd>
 
-      <section id="education" aria-labelledby="education-heading">
-        <h2 id="education-heading">Academic Education</h2>
-        <article>
-          <h3>CS50’s Introduction to Computer Science — Harvard University</h3>
-          <p><time datetime="2019">2019</time> | Remote</p>
-        </article>
-        <article>
-          <h3>Professional Registration & Admission - Ordem dos Arquitectos</h3>
-          <p>2010 - 2011 | Porto</p>
-        </article>
-        <article>
-          <h3>Masters in Architecture - Escola Superior Artística do Porto</h3>
-          <p>2004 - 2010 | Porto</p>
-        </article>
-      </section>
+              <dt class="flex flex-wrap items-center justify-between gap-2">
+                <span>
+                  <span>Heartfelt Companion App</span>
+                  <span class="font-normal">
+                    |
+                    <time datetime="2023">2023</time>
+                    - Present
+                  </span>
+                </span>
+                <details-toggle
+                  target-id="project-heartfelt-companion"
+                ></details-toggle>
+              </dt>
+              <dd id="project-heartfelt-companion" class="hidden">
+                Development of a companion app for heart-failure symptom
+                monitoring and medical device connectivity (Angular, Ionic,
+                Capacitor, PostgreSQL).
+                <ul>
+                  <li>
+                    Improved patient engagement and consistency of symptom
+                    reporting across trials.
+                  </li>
+                </ul>
+              </dd>
+
+              <dt class="flex flex-wrap items-center justify-between gap-2">
+                <span>
+                  <span>NIPE - textbook in a pocket</span>
+                  <span class="font-normal">
+                    |
+                    <time datetime="2022">2022</time>
+                    -
+                    <time datetime="2024">2024</time>
+                  </span>
+                </span>
+                <details-toggle target-id="project-nipe"></details-toggle>
+              </dt>
+              <dd id="project-nipe" class="hidden">
+                Development of a neonatal screening training tool and web
+                dashboards for content management, user administration, and
+                payment processing (Angular, Ionic, Cordova, PostgreSQL).
+                <ul>
+                  <li>
+                    Deployed in production improving access to remote education
+                    and verified information.
+                  </li>
+                </ul>
+              </dd>
+
+              <dt class="flex flex-wrap items-center justify-between gap-2">
+                <span>
+                  <span>Advantage Diary</span>
+                  <span class="font-normal">
+                    |
+                    <time datetime="2022">2022</time>
+                    -
+                    <time datetime="2023">2023</time>
+                  </span>
+                </span>
+                <details-toggle target-id="project-advantage"></details-toggle>
+              </dt>
+              <dd id="project-advantage" class="hidden">
+                Implementation of data visualization components for pain
+                tracking, triggers and notifications (Angular, Ionic, Cordova,
+                PostgreSQL).
+                <ul>
+                  <li>
+                    Improved self-monitoring practices through clear
+                    visualizations.
+                  </li>
+                </ul>
+              </dd>
+
+              <dt class="flex flex-wrap items-center justify-between gap-2">
+                <span>
+                  <span>BUDS</span>
+                  <span class="font-normal">
+                    |
+                    <time datetime="2020">2020</time>
+                    -
+                    <time datetime="2023">2023</time>
+                  </span>
+                </span>
+                <details-toggle target-id="project-buds"></details-toggle>
+              </dt>
+              <dd id="project-buds" class="hidden">
+                Design, prototyping and development of a parental support mobile
+                app, including integration with external proprietary CMS
+                (Angular, Ionic, Cordova).
+                <ul>
+                  <li>
+                    Aimed at improving communication and access to information
+                    by parents.
+                  </li>
+                </ul>
+              </dd>
+            </dl>
+          </article>
+        </section>
+        <hr class="border-neutral-300 dark:border-neutral-700" />
+        <section id="prev-experience" aria-labelledby="prev-experience-heading">
+          <h2
+            id="prev-experience-heading"
+            class="flex items-center justify-between"
+          >
+            Previous Professional Experience
+
+            <details-toggle target-id="prev-experience-group"></details-toggle>
+          </h2>
+          <div id="prev-experience-group" class="hidden">
+            <article>
+              <h3>Architect — WEPLAN - Engenharia | Construção</h3>
+              <p>
+                <time datetime="2016">2016</time> —
+                <time datetime="2019">2019</time> | Porto, Portugal
+              </p>
+
+              <ul>
+                <li>
+                  Architectural design, Project management, Construction
+                  management.
+                </li>
+              </ul>
+            </article>
+
+            <article>
+              <h3>
+                Architect — Cooperativa de Ensino Superior Artístico do Porto
+              </h3>
+              <p>
+                <time datetime="2014">2014</time> —
+                <time datetime="2016">2016</time> | Porto, Portugal
+              </p>
+              <ul>
+                <li>
+                  Architectural surveying and design, 3D modelling and
+                  rendering.
+                </li>
+              </ul>
+            </article>
+
+            <article>
+              <h3>Architect — Self-employed</h3>
+              <p>
+                <time datetime="2012">2012</time> —
+                <time datetime="2016">2016</time> | Porto, Portugal
+              </p>
+              <ul>
+                <li>
+                  Architectural surveying and design, 3D modelling and
+                  rendering, Construction management.
+                </li>
+              </ul>
+            </article>
+
+            <article>
+              <h3>Architect — Francisco Barata, Arquitecto</h3>
+              <p>
+                <time datetime="2010">2010</time> —
+                <time datetime="2012">2012</time> | Porto, Portugal
+              </p>
+              <ul>
+                <li>Architectural surveying and design.</li>
+              </ul>
+            </article>
+          </div>
+        </section>
+        <hr class="border-neutral-300 dark:border-neutral-700" />
+        <section id="education" aria-labelledby="education-heading">
+          <h2 id="education-heading" class="flex items-center justify-between">
+            Education & Professional Qualifications
+            <details-toggle target-id="education-group"></details-toggle>
+          </h2>
+          <div id="education-group" class="hidden">
+            <article>
+              <h3>
+                CS50: Introduction to Computer Science — Harvard University
+              </h3>
+              <p><time datetime="2019">2019</time> | Remote</p>
+            </article>
+            <article>
+              <h3>
+                Professional Registration & Admission - Ordem dos Arquitectos
+              </h3>
+              <p>2010 - 2011 | Porto</p>
+            </article>
+            <article>
+              <h3>
+                Masters in Architecture - Escola Superior Artística do Porto
+              </h3>
+              <p>2004 - 2010 | Porto</p>
+            </article>
+          </div>
+        </section>
+        <hr
+          class="border-neutral-300 dark:border-neutral-700 xl:border-0 mb-0 md:hidden"
+        />
+      </div>
     </main>
 
-    <footer>
-      <p>
-        Open to remote or hybrid work. Prefer open-source products with focus
-        positive impact.
-      </p>
-      <p>Built by Pedro Brandão. View source on GitHub.</p>
+    <footer class="w-full">
+      <div class="flex justify-between p-4 gap-2">
+        <p>Built by Pedro Brandão. View source on GitHub.</p>
+        <p><time datetime="2026">2026</time></p>
+      </div>
     </footer>
   </body>
 </html>
