@@ -30,7 +30,32 @@
     <script>
       tailwind.config = {
         darkMode: "class",
-        theme: { extend: {} },
+        theme: {
+          extend: {
+            colors: {
+              // This makes 'text-main' a utility class you can use: class="text-main"
+              main: {
+                bg: "var(--bg-main)",
+                text: "var(--text-main)",
+                border: "var(--border-color)",
+              },
+            },
+            // Force the Typography plugin to use our variables
+            typography: (theme) => ({
+              DEFAULT: {
+                css: {
+                  "--tw-prose-body": "var(--text-main)",
+                  "--tw-prose-headings": "var(--text-main)",
+                  "--tw-prose-links": "var(--text-main)",
+                  "--tw-prose-bold": "var(--text-main)",
+                  "--tw-prose-hr": "var(--border-color)",
+                  "--tw-prose-invert-body": "var(--text-main)",
+                  "--tw-prose-invert-headings": "var(--text-main)",
+                },
+              },
+            }),
+          },
+        },
       };
     </script>
     <link
@@ -44,26 +69,89 @@
       rel="stylesheet"
     />
 
-    <style>
-      body {
-        font-family: "Raleway", ui-sans-serif, system-ui;
+    <style type="text/tailwindcss">
+      @layer base {
+        :root {
+          --bg-main: theme("colors.neutral.200");
+          --text-main: theme("colors.neutral.800");
+          --border-color: theme("colors.neutral.300");
+        }
+
+        .dark:not([data-layout-theme]) {
+          --bg-main: theme("colors.neutral.800");
+          --text-main: theme("colors.neutral.200");
+          --border-color: theme("colors.neutral.700");
+        }
+
+        /* Cyberpunk */
+        [data-layout-theme="cyberpunk"] {
+          --bg-main: theme("colors.yellow.300");
+          --text-main: theme("colors.purple.900");
+          --border-color: theme("colors.purple.700");
+        }
+        [data-layout-theme="cyberpunk"].dark {
+          --bg-main: theme("colors.purple.900");
+          --text-main: theme("colors.yellow.300");
+          --border-color: theme("colors.purple.300");
+        }
+
+        /* Vaporwave */
+        [data-layout-theme="vaporwave"] {
+          --bg-main: theme("colors.violet.900");
+          --text-main: theme("colors.teal.300");
+          --border-color: theme("colors.pink.400");
+        }
+        [data-layout-theme="vaporwave"].dark {
+          --bg-main: theme("colors.teal.300");
+          --text-main: theme("colors.violet.900");
+          --border-color: theme("colors.pink.600");
+        }
+        /* Fallout Terminal */
+        [data-layout-theme="terminal"] {
+          --bg-main: #00ee00;
+          --text-main: theme("colors.black");
+          --border-color: #008e00;
+        }
+        [data-layout-theme="terminal"].dark {
+          --bg-main: theme("colors.black");
+          --text-main: #00ee00;
+          --border-color: #008e00;
+        }
+
+        .prose strong,
+        .prose a,
+        .prose li::marker {
+          color: var(--text-main) !important;
+        }
+        body,
+        body *,
+        hr {
+          @apply transition-colors duration-300;
+          border-color: var(--border-color);
+        }
+
+        body {
+          font-family: "Raleway", ui-sans-serif, system-ui;
+          background-color: var(--bg-main);
+          color: var(--text-main);
+        }
       }
     </style>
 
     <script type="module" src="layout-toggle.js"></script>
     <script type="module" src="theme-toggle.js"></script>
+    <script type="module" src="variation-toggle.js"></script>
     <script type="module" src="details-toggle.js"></script>
   </head>
 
-  <body
-    class="bg-neutral-200 text-neutral-800 dark:bg-neutral-800 dark:text-neutral-200"
-  >
+  <body>
     <header class="fixed w-full">
       <div class="flex justify-end p-4 gap-2">
         <span class="hidden md:block">
           <layout-toggle></layout-toggle>
         </span>
         <theme-toggle></theme-toggle>
+        <variation-toggle></variation-toggle>
       </div>
     </header>
 
@@ -72,7 +160,7 @@
     >
       <div
         id="left-col"
-        class="px-8 border-0 border-neutral-300 dark:border-neutral-700 rounded-2xl md:flex-[1] md:border prose prose-neutral prose-sm md:prose-base dark:prose-invert max-w-none"
+        class="px-8 border-0 border-main-border rounded-2xl md:flex-[1] md:border prose prose-sm md:prose-base max-w-none"
       >
         <section id="summary" aria-labelledby="personal-details-heading">
           <h1 id="personal-details-heading" class="!mb-0 !mt-12">
@@ -82,11 +170,7 @@
           <div class="flex flex-col gap-2">
             <span class="flex items-center gap-2 text-sm">
               <i class="fab fa-github"></i>
-              <a
-                href="https://github.com/pxbrandao"
-                target="_blank"
-                class="text-neutral-800 dark:text-neutral-200"
-              >
+              <a href="https://github.com/pxbrandao" target="_blank">
                 <span>github.com/pxbrandao</span>
               </a>
             </span>
@@ -95,17 +179,13 @@
               <a
                 href="https://www.linkedin.com/in/opedrobrandao/"
                 target="_blank"
-                class="text-neutral-800 dark:text-neutral-200"
               >
                 <span>linkedin.com/in/opedrobrandao</span>
               </a>
             </span>
             <span class="flex items-center gap-2 text-sm">
               <i class="fa-solid fa-envelope"></i>
-              <a
-                href="mailto:pbrandao.dev@gmail.com"
-                class="text-neutral-800 dark:text-neutral-200"
-              >
+              <a href="mailto:pbrandao.dev@gmail.com">
                 <span>pbrandao.dev@gmail.com</span>
               </a>
             </span>
@@ -116,7 +196,6 @@
                 href="/assets/pedro_brandao_software_developer_resume.pdf"
                 title="Download Pedro Brandão Resume in PDF"
                 target="_blank"
-                class="text-neutral-800 dark:text-neutral-200"
               >
                 <span>Resume</span>
               </a>
@@ -125,7 +204,6 @@
                 href="/assets/pedro_brandao_software_developer_cv.pdf"
                 title="Download Pedro Brandão Curriculum Vitae in PDF"
                 target="_blank"
-                class="text-neutral-800 dark:text-neutral-200"
               >
                 <span>CV</span>
               </a>
@@ -141,7 +219,7 @@
             design systems optimization.
           </p>
         </section>
-        <hr class="border-neutral-300 dark:border-neutral-700" />
+        <hr class="border-main-border" />
         <section id="skills" aria-labelledby="skills-heading">
           <h2 id="skills-heading">Technical skills</h2>
           <ul class="list-none space-y-4 !pl-0">
@@ -149,7 +227,7 @@
               <strong>Programming Languages</strong><br />
               <div class="flex flex-wrap gap-2 mt-2">
                 <span
-                  class="inline-flex items-center gap-2 px-2 py-2 text-sm rounded-full border border-neutral-300 dark:border-neutral-700"
+                  class="inline-flex items-center gap-2 px-2 py-2 text-sm rounded-full border border-main-border"
                 >
                   <span
                     class="iconify"
@@ -158,7 +236,7 @@
                   JavaScript
                 </span>
                 <span
-                  class="inline-flex items-center gap-2 px-2 py-2 text-sm rounded-full border border-neutral-300 dark:border-neutral-700"
+                  class="inline-flex items-center gap-2 px-2 py-2 text-sm rounded-full border border-main-border"
                 >
                   <span
                     class="iconify"
@@ -167,13 +245,13 @@
                   TypeScript
                 </span>
                 <span
-                  class="inline-flex items-center gap-2 px-2 py-2 text-sm rounded-full border border-neutral-300 dark:border-neutral-700"
+                  class="inline-flex items-center gap-2 px-2 py-2 text-sm rounded-full border border-main-border"
                 >
                   <span class="iconify" data-icon="simple-icons:html5"></span>
                   HTML
                 </span>
                 <span
-                  class="inline-flex items-center gap-2 px-2 py-2 text-sm rounded-full border border-neutral-300 dark:border-neutral-700"
+                  class="inline-flex items-center gap-2 px-2 py-2 text-sm rounded-full border border-main-border"
                 >
                   <span class="iconify" data-icon="simple-icons:css"></span> CSS
                 </span>
@@ -184,19 +262,19 @@
               <strong>Frontend</strong><br />
               <div class="flex flex-wrap gap-2 mt-2">
                 <span
-                  class="inline-flex items-center gap-2 px-2 py-2 text-sm rounded-full border border-neutral-300 dark:border-neutral-700"
+                  class="inline-flex items-center gap-2 px-2 py-2 text-sm rounded-full border border-main-border"
                 >
                   <span class="iconify" data-icon="simple-icons:angular"></span>
                   Angular
                 </span>
                 <span
-                  class="inline-flex items-center gap-2 px-2 py-2 text-sm rounded-full border border-neutral-300 dark:border-neutral-700"
+                  class="inline-flex items-center gap-2 px-2 py-2 text-sm rounded-full border border-main-border"
                 >
                   <span class="iconify" data-icon="simple-icons:react"></span>
                   React
                 </span>
                 <span
-                  class="inline-flex items-center gap-2 px-2 py-2 text-sm rounded-full border border-neutral-300 dark:border-neutral-700"
+                  class="inline-flex items-center gap-2 px-2 py-2 text-sm rounded-full border border-main-border"
                 >
                   <span
                     class="iconify"
@@ -205,13 +283,13 @@
                   Next.js
                 </span>
                 <span
-                  class="inline-flex items-center gap-2 px-2 py-2 text-sm rounded-full border border-neutral-300 dark:border-neutral-700"
+                  class="inline-flex items-center gap-2 px-2 py-2 text-sm rounded-full border border-main-border"
                 >
                   <span class="iconify" data-icon="simple-icons:ionic"></span
                   >Ionic Framework
                 </span>
                 <span
-                  class="inline-flex items-center gap-2 px-2 py-2 text-sm rounded-full border border-neutral-300 dark:border-neutral-700"
+                  class="inline-flex items-center gap-2 px-2 py-2 text-sm rounded-full border border-main-border"
                 >
                   <span
                     class="iconify"
@@ -220,7 +298,7 @@
                   Tailwind CSS
                 </span>
                 <span
-                  class="inline-flex items-center gap-2 px-2 py-2 text-sm rounded-full border border-neutral-300 dark:border-neutral-700"
+                  class="inline-flex items-center gap-2 px-2 py-2 text-sm rounded-full border border-main-border"
                 >
                   <span
                     class="iconify"
@@ -229,13 +307,13 @@
                   shadcn/ui
                 </span>
                 <span
-                  class="inline-flex items-center gap-2 px-2 py-2 text-sm rounded-full border border-neutral-300 dark:border-neutral-700"
+                  class="inline-flex items-center gap-2 px-2 py-2 text-sm rounded-full border border-main-border"
                 >
                   <span class="iconify" data-icon="simple-icons:radixui"></span>
                   Radix UI
                 </span>
                 <span
-                  class="inline-flex items-center gap-2 px-2 py-2 text-sm rounded-full border border-neutral-300 dark:border-neutral-700"
+                  class="inline-flex items-center gap-2 px-2 py-2 text-sm rounded-full border border-main-border"
                 >
                   <span
                     class="iconify"
@@ -250,7 +328,7 @@
               <strong>Backend</strong> (working knowledge)
               <div class="flex flex-wrap gap-2 mt-2">
                 <span
-                  class="inline-flex items-center gap-2 px-2 py-2 text-sm rounded-full border border-neutral-300 dark:border-neutral-700"
+                  class="inline-flex items-center gap-2 px-2 py-2 text-sm rounded-full border border-main-border"
                 >
                   <span
                     class="iconify"
@@ -259,7 +337,7 @@
                   >Node.js
                 </span>
                 <span
-                  class="inline-flex items-center gap-2 px-2 py-2 text-sm rounded-full border border-neutral-300 dark:border-neutral-700"
+                  class="inline-flex items-center gap-2 px-2 py-2 text-sm rounded-full border border-main-border"
                 >
                   <span
                     class="iconify"
@@ -268,7 +346,7 @@
                   HTTP/REST APIs
                 </span>
                 <span
-                  class="inline-flex items-center gap-2 px-2 py-2 text-sm rounded-full border border-neutral-300 dark:border-neutral-700"
+                  class="inline-flex items-center gap-2 px-2 py-2 text-sm rounded-full border border-main-border"
                 >
                   <span
                     class="iconify"
@@ -277,7 +355,7 @@
                   PostgreSQL
                 </span>
                 <span
-                  class="inline-flex items-center gap-2 px-2 py-2 text-sm rounded-full border border-neutral-300 dark:border-neutral-700"
+                  class="inline-flex items-center gap-2 px-2 py-2 text-sm rounded-full border border-main-border"
                 >
                   <span class="iconify" data-icon="simple-icons:drizzle"></span>
                   Drizzle ORM
@@ -289,7 +367,7 @@
               <strong>Mobile</strong> (hybrid)
               <div class="flex flex-wrap gap-2 mt-2">
                 <span
-                  class="inline-flex items-center gap-2 px-2 py-2 text-sm rounded-full border border-neutral-300 dark:border-neutral-700"
+                  class="inline-flex items-center gap-2 px-2 py-2 text-sm rounded-full border border-main-border"
                 >
                   <span
                     class="iconify"
@@ -298,7 +376,7 @@
                   Capacitor
                 </span>
                 <span
-                  class="inline-flex items-center gap-2 px-2 py-2 text-sm rounded-full border border-neutral-300 dark:border-neutral-700"
+                  class="inline-flex items-center gap-2 px-2 py-2 text-sm rounded-full border border-main-border"
                 >
                   <span
                     class="iconify"
@@ -313,24 +391,24 @@
               <strong>Tools &amp; Other</strong><br />
               <div class="flex flex-wrap gap-2 mt-2">
                 <span
-                  class="inline-flex items-center gap-2 px-2 py-2 text-sm rounded-full border border-neutral-300 dark:border-neutral-700"
+                  class="inline-flex items-center gap-2 px-2 py-2 text-sm rounded-full border border-main-border"
                 >
                   <span class="iconify" data-icon="simple-icons:git"></span> Git
                 </span>
                 <span
-                  class="inline-flex items-center gap-2 px-2 py-2 text-sm rounded-full border border-neutral-300 dark:border-neutral-700"
+                  class="inline-flex items-center gap-2 px-2 py-2 text-sm rounded-full border border-main-border"
                 >
                   <span class="iconify" data-icon="simple-icons:docker"></span>
                   Docker
                 </span>
                 <span
-                  class="inline-flex items-center gap-2 px-2 py-2 text-sm rounded-full border border-neutral-300 dark:border-neutral-700"
+                  class="inline-flex items-center gap-2 px-2 py-2 text-sm rounded-full border border-main-border"
                 >
                   <span class="iconify" data-icon="simple-icons:linux"></span>
                   Linux
                 </span>
                 <span
-                  class="inline-flex items-center gap-2 px-2 py-2 text-sm rounded-full border border-neutral-300 dark:border-neutral-700"
+                  class="inline-flex items-center gap-2 px-2 py-2 text-sm rounded-full border border-main-border"
                 >
                   <span class="iconify" data-icon="simple-icons:figma"></span>
                   Figma
@@ -342,17 +420,17 @@
               <strong>Human Languages</strong><br />
               <div class="flex flex-wrap gap-2 mt-2">
                 <span
-                  class="inline-flex items-center gap-2 px-2 py-2 text-sm rounded-full border border-neutral-300 dark:border-neutral-700"
+                  class="inline-flex items-center gap-2 px-2 py-2 text-sm rounded-full border border-main-border"
                 >
                   <i class="fa-solid fa-language"></i> Portuguese (native)
                 </span>
                 <span
-                  class="inline-flex items-center gap-2 px-2 py-2 text-sm rounded-full border border-neutral-300 dark:border-neutral-700"
+                  class="inline-flex items-center gap-2 px-2 py-2 text-sm rounded-full border border-main-border"
                 >
                   <i class="fa-solid fa-language"></i> English (professional)
                 </span>
                 <span
-                  class="inline-flex items-center gap-2 px-2 py-2 text-sm rounded-full border border-neutral-300 dark:border-neutral-700"
+                  class="inline-flex items-center gap-2 px-2 py-2 text-sm rounded-full border border-main-border"
                 >
                   <i class="fa-solid fa-language"></i> Spanish (conversational)
                 </span>
@@ -360,11 +438,11 @@
             </li>
           </ul>
         </section>
-        <hr class="border-neutral-300 dark:border-neutral-700 mb-0 md:hidden" />
+        <hr class="border-main-border mb-0 md:hidden" />
       </div>
       <div
         id="right-col"
-        class="px-8 border-0 border-neutral-300 dark:border-neutral-700 rounded-2xl md:flex-[2] md:border m-0 prose prose-neutral prose-sm md:prose-base dark:prose-invert max-w-none"
+        class="px-8 border-0 border-main-border rounded-2xl md:flex-[2] md:border prose prose-sm md:prose-base max-w-none"
       >
         <section id="experience" aria-labelledby="experience-heading">
           <h2 id="experience-heading">Professional Experience</h2>
@@ -516,7 +594,7 @@
             </dl>
           </article>
         </section>
-        <hr class="border-neutral-300 dark:border-neutral-700" />
+        <hr class="border-main-border" />
         <section id="prev-experience" aria-labelledby="prev-experience-heading">
           <h2
             id="prev-experience-heading"
@@ -584,7 +662,7 @@
             </article>
           </div>
         </section>
-        <hr class="border-neutral-300 dark:border-neutral-700" />
+        <hr class="border-main-border" />
         <section id="education" aria-labelledby="education-heading">
           <h2 id="education-heading" class="flex items-center justify-between">
             Education & Professional Qualifications
@@ -612,9 +690,7 @@
             </article>
           </div>
         </section>
-        <hr
-          class="border-neutral-300 dark:border-neutral-700 xl:border-0 mb-0 md:hidden"
-        />
+        <hr class="border-main-border xl:border-0 mb-0 md:hidden" />
       </div>
     </main>
 

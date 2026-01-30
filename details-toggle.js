@@ -5,13 +5,12 @@ class DetailsToggle extends HTMLElement {
 
     this.innerHTML = `
       <button type="button"
-              class="flex items-center gap-2 p-2 text-sm font-medium rounded-full
-                    bg-neutral-300 dark:bg-neutral-700
-                    text-neutral-800 dark:text-neutral-200
-                    hover:underline focus:outline-none"
+              class="flex items-center justify-center gap-2 p-2 text-sm font-medium rounded-full h-8 w-8
+                    bg-main-text text-main-bg
+                    "
               aria-label="Toggle details"
               aria-expanded="false">
-        <i class="fa-solid fa-plus"></i>
+        <i class="fa-solid fa-plus fa-xs"></i>
       </button>
     `;
 

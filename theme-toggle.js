@@ -7,10 +7,9 @@ class ThemeToggle extends HTMLElement {
     this.innerHTML = `
       <button
         class="flex items-center justify-center gap-2 px-4 py-2 rounded w-8 h-8
-               bg-neutral-800 text-neutral-200
-               dark:bg-neutral-200 dark:text-neutral-800
-               focus:outline-none"
-        aria-label="Toggle theme"
+          bg-main-text text-main-bg
+          "
+        aria-label="Toggle theme mode"
       >
         <i class="fa-solid fa-sun"></i>
       </button>
