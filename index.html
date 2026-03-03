@@ -33,14 +33,12 @@
         theme: {
           extend: {
             colors: {
-              // This makes 'text-main' a utility class you can use: class="text-main"
               main: {
                 bg: "var(--bg-main)",
                 text: "var(--text-main)",
                 border: "var(--border-color)",
               },
             },
-            // Force the Typography plugin to use our variables
             typography: (theme) => ({
               DEFAULT: {
                 css: {
@@ -126,7 +124,6 @@
         body,
         body *,
         hr {
-          /* @apply transition-colors duration-300; */
           border-color: var(--border-color);
         }
 
