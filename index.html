@@ -33,14 +33,12 @@
         theme: {
           extend: {
             colors: {
-              // This makes 'text-main' a utility class you can use: class="text-main"
               main: {
                 bg: "var(--bg-main)",
                 text: "var(--text-main)",
                 border: "var(--border-color)",
               },
             },
-            // Force the Typography plugin to use our variables
             typography: (theme) => ({
               DEFAULT: {
                 css: {
@@ -126,7 +124,6 @@
         body,
         body *,
         hr {
-          /* @apply transition-colors duration-300; */
           border-color: var(--border-color);
         }
 
@@ -211,12 +208,11 @@
           </div>
           <h2 id="summary-heading">Summary</h2>
           <p>
-            Software Developer with 6+ years of experience building web
-            applications (Angular and Next.js) for healthcare and academic
-            sectors. Specializing in modern frontend architecture and
-            component-based design. Experienced working in regulated
-            environments and remote teams. Interested in product development and
-            design systems optimization.
+            Software Developer and Design Engineer with 7+ years of experience
+            building web and hybrid mobile applications. Specializing in design
+            systems, frontend architecture, and bridging design and engineering
+            through component-based development. Experienced working in
+            regulated environments and distributed remote teams.
           </p>
         </section>
         <hr class="border-main-border" />
@@ -321,6 +317,21 @@
                   ></span>
                   Three.js
                 </span>
+                <span
+                  class="inline-flex items-center gap-2 px-2 py-2 text-sm rounded-full border border-main-border"
+                >
+                  <span
+                    class="iconify"
+                    data-icon="simple-icons:storybook"
+                  ></span>
+                  Storybook
+                </span>
+                <span
+                  class="inline-flex items-center gap-2 px-2 py-2 text-sm rounded-full border border-main-border"
+                >
+                  <span class="iconify" data-icon="simple-icons:figma"></span>
+                  Figma
+                </span>
               </div>
             </li>
 
@@ -407,12 +418,6 @@
                   <span class="iconify" data-icon="simple-icons:linux"></span>
                   Linux
                 </span>
-                <span
-                  class="inline-flex items-center gap-2 px-2 py-2 text-sm rounded-full border border-main-border"
-                >
-                  <span class="iconify" data-icon="simple-icons:figma"></span>
-                  Figma
-                </span>
               </div>
             </li>
 
@@ -448,8 +453,42 @@
           <h2 id="experience-heading">Professional Experience</h2>
 
           <article>
-            <h3>Software Developer — Cambridge Digital Health</h3>
-            <p><time datetime="2019">2019</time> — Present | Remote</p>
+            <h3>
+              Technical Product Designer —
+              <a href="https://mindera.com/" target="_blank">Mindera</a>
+            </h3>
+            <h4 class="text-sm">
+              via <a href="https://www.humanit.pt/" target="_blank">HumanIt</a>
+            </h4>
+            <p><time datetime="2026">2026</time> — Present | Remote</p>
+
+            <ul>
+              <li>Design and implementation of design systems.</li>
+              <li>
+                Maintenance of reusable component libraries in Figma, Next.js,
+                shadcn/ui and Storybook, ensuring consistency between design and
+                implementation.
+              </li>
+              <li>
+                Collaboration across design and engineering to document
+                components, tokens, and usage guidelines.
+              </li>
+            </ul>
+          </article>
+
+          <hr class="border-main-border" />
+
+          <article>
+            <h3>
+              Software Developer —
+
+              <a
+                href="https://www.linkedin.com/company/cambridge-digital-health/"
+                target="_blank"
+                >Cambridge Digital Health</a
+              >
+            </h3>
+            <p><time datetime="2019">2019</time> — 2026 | Remote</p>
 
             <ul>
               <li>
@@ -466,132 +505,6 @@
                 user experiences.
               </li>
             </ul>
-
-            <h4 class="text-lg">Key projects</h4>
-            <dl>
-              <dt class="flex flex-wrap items-center justify-between gap-2">
-                <span class="flex-grow">
-                  <span>Heartfelt Health Integrity</span>
-                  <span class="font-normal">
-                    |
-                    <time datetime="2024">2024</time>
-                    — Present
-                  </span>
-                </span>
-                <details-toggle
-                  target-id="project-heartfelt-health-integrity"
-                ></details-toggle>
-              </dt>
-              <dd id="project-heartfelt-health-integrity" class="hidden">
-                Development of clinical trial management web applications used
-                across UK and US sites for patient tracking and trial data
-                management (Next.js, Shadcn/ui, Tailwind CSS, TanStack and
-                Drizzle ORM).
-                <ul>
-                  <li>
-                    Deployed in production across multiple UK and US clinical
-                    trial sites.
-                  </li>
-                </ul>
-              </dd>
-
-              <dt class="flex flex-wrap items-center justify-between gap-2">
-                <span>
-                  <span>Heartfelt Companion App</span>
-                  <span class="font-normal">
-                    |
-                    <time datetime="2023">2023</time>
-                    - Present
-                  </span>
-                </span>
-                <details-toggle
-                  target-id="project-heartfelt-companion"
-                ></details-toggle>
-              </dt>
-              <dd id="project-heartfelt-companion" class="hidden">
-                Development of a companion app for heart-failure symptom
-                monitoring and medical device connectivity (Angular, Ionic,
-                Capacitor, PostgreSQL).
-                <ul>
-                  <li>
-                    Improved patient engagement and consistency of symptom
-                    reporting across trials.
-                  </li>
-                </ul>
-              </dd>
-
-              <dt class="flex flex-wrap items-center justify-between gap-2">
-                <span>
-                  <span>NIPE - textbook in a pocket</span>
-                  <span class="font-normal">
-                    |
-                    <time datetime="2022">2022</time>
-                    -
-                    <time datetime="2024">2024</time>
-                  </span>
-                </span>
-                <details-toggle target-id="project-nipe"></details-toggle>
-              </dt>
-              <dd id="project-nipe" class="hidden">
-                Development of a neonatal screening training tool and web
-                dashboards for content management, user administration, and
-                payment processing (Angular, Ionic, Cordova, PostgreSQL).
-                <ul>
-                  <li>
-                    Deployed in production improving access to remote education
-                    and verified information.
-                  </li>
-                </ul>
-              </dd>
-
-              <dt class="flex flex-wrap items-center justify-between gap-2">
-                <span>
-                  <span>Advantage Diary</span>
-                  <span class="font-normal">
-                    |
-                    <time datetime="2022">2022</time>
-                    -
-                    <time datetime="2023">2023</time>
-                  </span>
-                </span>
-                <details-toggle target-id="project-advantage"></details-toggle>
-              </dt>
-              <dd id="project-advantage" class="hidden">
-                Implementation of data visualization components for pain
-                tracking, triggers and notifications (Angular, Ionic, Cordova,
-                PostgreSQL).
-                <ul>
-                  <li>
-                    Improved self-monitoring practices through clear
-                    visualizations.
-                  </li>
-                </ul>
-              </dd>
-
-              <dt class="flex flex-wrap items-center justify-between gap-2">
-                <span>
-                  <span>BUDS</span>
-                  <span class="font-normal">
-                    |
-                    <time datetime="2020">2020</time>
-                    -
-                    <time datetime="2023">2023</time>
-                  </span>
-                </span>
-                <details-toggle target-id="project-buds"></details-toggle>
-              </dt>
-              <dd id="project-buds" class="hidden">
-                Design, prototyping and development of a parental support mobile
-                app, including integration with external proprietary CMS
-                (Angular, Ionic, Cordova).
-                <ul>
-                  <li>
-                    Aimed at improving communication and access to information
-                    by parents.
-                  </li>
-                </ul>
-              </dd>
-            </dl>
           </article>
         </section>
         <hr class="border-main-border" />
